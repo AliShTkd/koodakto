@@ -13,78 +13,88 @@
     <div class="container-fluid">
         <!-- start header -->
         <header class="container mt-4 nav-bar">
-           <div class="row align-items-center justify-content-between flex-nowrap">
-
-                <!-- لوگو -->
-                <div class="col-auto nav-box-icon">
-                    <img class="nav-icon" src="./assets/photos/کودکتو.svg" alt="لوگو">
-                </div>
-
-                <!-- منو -->
-                <div class="col d-none d-lg-block">
-                    <ul class="nav-text d-flex justify-content-center gap-4 m-0 p-0">
-                    <li class="nav-li d-flex align-items-center"><img src="./assets/photos/home 04.svg" alt=""><a href="index.html">خانه</a></li>
-                    <li class="nav-li d-flex align-items-center"><img src="./assets/photos/reward.svg" alt=""><a href="contactUs.html">ارتباط با ما</a></li>
-                    <li class="nav-li d-flex align-items-center"><img src="./assets/photos/store.svg" alt=""><a href="aboutUs.html">درباره ما</a></li>
-                    <li class="nav-li d-flex align-items-center"><img src="./assets/photos/receipt.svg" alt=""><a href="artice.html">وبلاگ</a></li>
-                    <li class="nav-li d-flex align-items-center"><img src="./assets/photos/shopping basket 02.svg" alt=""><a href="productsPage.html">محصولات</a></li>
-                    <li class="nav-li d-flex align-items-center"><img src="./assets/photos/shopping basket 02.svg" alt=""><a href="basket.html">سبد خرید</a></li>
-                    <li class="nav-li d-flex align-items-center"><img src="./assets/photos/shopping basket 02.svg" alt=""><a href="usermanager.html">مدیریت کاربران</a></li>
-                    </ul>
-                </div>
-
-                <!-- جستجو و آیکون آدمک -->
-                <div class="col-auto d-none d-lg-flex align-items-center gap-2">
-                    <input class="input-1" type="text" placeholder="محصول مورد نظر را جست و جو کنید">
-                    <a href="login.html"><img class="combo-icon" src="./assets/photos/Combo shape.svg" alt=""></a>
-                </div>
-
-            </div>
-
-          <!-- responsive menu for phone -->
-            <div class="collapse d-lg-none nav-bar-1 " id="mobileNav">
-              <ul class="nav-text list-unstyled">
-                <li class="nav-li d-flex align-items-center">
-                  <img src="./assets/photos/home 04.svg" alt="">
-                  <a href="index.html">خانه</a>
-                </li>
-                <li class="nav-li d-flex align-items-center">
-                  <img src="./assets/photos/reward.svg" alt="">
-                  <a href="contactUs.html">ارتباط با ما</a>
-                </li>
-                <li class="nav-li d-flex align-items-center">
-                  <img src="./assets/photos/store.svg" alt="">
-                  <a href="aboutUs.html">درباره ما</a>
-                </li>
-                <li class="nav-li d-flex align-items-center">
-                  <img src="./assets/photos/receipt.svg" alt="">
-                  <a href="artice.html">وبلاگ</a>
-                </li>
-                <li class="nav-li d-flex align-items-center">
-                  <img src="./assets/photos/shopping basket 02.svg" alt="">
-                  <a href="productsPage.html">محصولات</a>
-                </li>
-                 </li>
-                   <li class="nav-li d-flex align-items-center">
+        <div class="row align-items-center">
+      
+          <div class="col-lg-1 col-6 nav-box-icon">
+            <img class="nav-icon" src="./assets/photos/کودکتو.svg" alt="لوگو">
+          </div>
+      
+          <div class="col-lg-7 d-none d-lg-block align-items-center">
+            <ul class="nav-text d-flex">
+              <li class="nav-li d-flex align-items-center">
+                <img src="./assets/photos/home 04.svg" alt="">
+                <a href="index.html">خانه</a>
+              </li>
+              <li class="nav-li d-flex align-items-center">
+                <img src="./assets/photos/reward.svg" alt="">
+                <a href="contactUs.html">ارتباط با ما</a>
+              </li>
+              <li class="nav-li d-flex align-items-center">
+                <img src="./assets/photos/store.svg" alt="">
+                <a href="aboutUs.html">درباره ما</a>
+              </li>
+              <li class="nav-li d-flex align-items-center">
+                <img src="./assets/photos/receipt.svg" alt="">
+                <a href="artice.html">وبلاگ</a>
+              </li>
+              <li class="nav-li d-flex align-items-center">
+                <img src="./assets/photos/shopping basket 02.svg" alt="">
+                <a href="productsPage.html">محصولات</a>
+              </li>
+              <li class="nav-li d-flex align-items-center">
                     <img src="./assets/photos/shopping basket 02.svg" alt="">
                     <a href="basket.html">سبد خرید</a>
-                  </li>
-                   <li class="nav-li d-flex align-items-center">
-                    <img src="./assets/photos/shopping basket 02.svg" alt="">
-                    <a href="usermanager.html">مدیریت کاربران</a>
-                  </li>
-                <li class="d-flex align-items-center justify-content-center">
-                    <a href="login.html"><img class="combo-icon" src="./assets/photos/Combo shape.svg" alt=""></a>
-                </li>
-              </ul>
-            </div>
-            <!-- end responsive menu for phone -->
-          </header> 
+              </li>
+            </ul>
+          </div>
+      
+
+          <div class=" d-lg-block  d-none col-6 col-lg-4 text-start">
+            <input class="input-1" type="text" placeholder="محصول مورد نظر را جست و جو کنید">
+            <a href="login.html"><img class="combo-icon" src="./assets/photos/Combo shape.svg" alt=""></a>
+          </div>
+      
+          <div class="col-6 d-lg-none text-start">
+            <button class="btn" type="button" data-bs-toggle="collapse" data-bs-target="#mobileNav">
+             <div>☰</div>
+            </button>
+          </div>
+        </div>
+      <!-- responsive menu for phone -->
+        <div class="collapse d-lg-none nav-bar-1 " id="mobileNav">
+          <ul class="nav-text list-unstyled">
+            <li class="nav-li d-flex align-items-center">
+              <img src="./assets/photos/home 04.svg" alt="">
+              <a href="index.html">خانه</a>
+            </li>
+            <li class="nav-li d-flex align-items-center">
+              <img src="./assets/photos/reward.svg" alt="">
+              <a href="contactUs.html">ارتباط با ما</a>
+            </li>
+            <li class="nav-li d-flex align-items-center">
+              <img src="./assets/photos/store.svg" alt="">
+              <a href="aboutUs.html">درباره ما</a>
+            </li>
+            <li class="nav-li d-flex align-items-center">
+              <img src="./assets/photos/receipt.svg" alt="">
+              <a href="artice.html">وبلاگ</a>
+            </li>
+            <li class="nav-li d-flex align-items-center">
+              <img src="./assets/photos/shopping basket 02.svg" alt="">
+              <a href="">محصولات</a>
+            </li>
+            <li class="d-flex align-items-center justify-content-center">
+              <a href="login.html"><img class="combo-icon" src="./assets/photos/Combo shape.svg" alt=""></a>
+          </li>
+          </ul>
+        </div>
+        <!-- end responsive menu for phone -->
+    </header> 
         <!-- end header -->
 
         <!-- start age section -->
         <section class="container main-top mt-3">
-            <div class="main-color col-lg-12 col-12"></div> <!-- background age section -->
+            <div class="main-color col-lg-12 col-12"><img src="./assets/photos/IMG_9568.PNG" alt=""></div> <!-- background age section -->
             <div class="main-detail">
 
                 <div class="justify-content-around row flex-wrap ">
@@ -138,7 +148,7 @@
             <div class="row justify-content-around">
 
                 <div class="col-6 col-md-6 col-lg-3 course-1">
-                    <div class="img-box"></div>
+                    <div class="img-box"><img src="./assets/photos/annie-spratt-ORDz1m1-q0I-unsplash 1.svg" alt=""></div>
                     <div class="img-div d-flex justify-content-between">
                         <span class="img-txt text-white">خلاقیت کودکان</span>
                         <span class="img-icon"><img src="./assets/photos/Vector 174.svg" alt=""></span>
@@ -147,6 +157,7 @@
 
                 <div class="col-6 col-md-6 col-lg-3 course-1">
                     <div class="img-box">
+                        <img src="./assets/photos/Frame 1261157135 (1).svg" alt="">
                     </div>
                     <div class="img-div d-flex justify-content-between">
                         <span class="img-txt text-white">خانواده کودکان</span>
@@ -156,6 +167,7 @@
 
                 <div class="col-6 col-md-6 col-lg-3 course-1">
                     <div class="img-box">
+                        <img src="./assets/photos/Frame 1116606906.svg" alt="">
                     </div>
                     <div class="img-div d-flex justify-content-between">
                         <span class="img-txt text-white">اختلال یادگیری</span>
@@ -165,6 +177,7 @@
 
                 <div class="col-6 col-md-6 col-lg-3 course-1">
                     <div class="img-box">
+                        <img src="./assets/photos/Frame 1116606906 (4).svg" alt="">
                     </div>
                     <div class="img-div d-flex justify-content-between">
                         <span class="img-txt text-white">پزشک کودکان</span>
@@ -188,7 +201,7 @@
                 <div class="left col-lg-8">
                   <div class="search-box d-flex flex-wrap justify-content-center align-items-center">
                     <div class="search-item d-flex align-items-center">    <!--left search section-->
-                      <span class="btn-89">انتخاب شهر</span>
+                      <a href="doctors.html"><span class="btn-89">مشاهده بیشتر </span></a>
                     </div>
           
                     <div class="search-input d-flex align-items-center"> <!--left search section-->
@@ -595,9 +608,35 @@
 
                         <div class="slides-2"><!-- div slide -->
                             <div class="hobby-div">
-                            <div class="hobby-slide"><img class="hobby-slide-img" src="./assets/photos/Frame 1116606927.svg" alt=""></div>
+                            <div class="hobby-slide"><img class="hobby-slide-img" src="./assets/photos/mowjabi.webp" alt=""></div>
                             <div class="hobby-title d-flex">
-                                <span class="hobby-span-title-1">شهر بازی پارک ارم</span>
+                                <span class="hobby-span-title-1">موج های آبی مشهد</span>
+                                <span class="hobby-span-title">مشهد<img src="./assets/photos/Vector.svg" alt=""></span>
+                            </div>
+                            <div class="hobby-btn d-flex align-items-center justify-content-center">
+                                <span class="hobby-span-btn">بزن بریم</span>
+                            </div>
+                        </div>
+                        </div>
+
+                        <div class="slides-2"><!-- div slide -->
+                            <div class="hobby-div">
+                            <div class="hobby-slide"><img class="hobby-slide-img" src="./assets/photos/park melat.webp" alt=""></div>
+                            <div class="hobby-title d-flex">
+                                <span class="hobby-span-title-1">پارک ملت مشهد</span>
+                                <span class="hobby-span-title">مشهد<img src="./assets/photos/Vector.svg" alt=""></span>
+                            </div>
+                            <div class="hobby-btn d-flex align-items-center justify-content-center">
+                                <span class="hobby-span-btn">بزن بریم</span>
+                            </div>
+                        </div>
+                        </div>
+
+                        <div class="slides-2"><!-- div slide -->
+                            <div class="hobby-div">
+                            <div class="hobby-slide"><img class="hobby-slide-img" src="./assets/photos/opark.jpg" alt=""></div>
+                            <div class="hobby-title d-flex">
+                                <span class="hobby-span-title-1">مجموعه اوپارک</span>
                                 <span class="hobby-span-title">تهران<img src="./assets/photos/Vector.svg" alt=""></span>
                             </div>
                             <div class="hobby-btn d-flex align-items-center justify-content-center">
@@ -608,35 +647,9 @@
 
                         <div class="slides-2"><!-- div slide -->
                             <div class="hobby-div">
-                            <div class="hobby-slide"><img class="hobby-slide-img" src="./assets/photos/Frame 1116606927.svg" alt=""></div>
+                            <div class="hobby-slide"><img class="hobby-slide-img" src="./assets/photos/asbab bazi.jpg" alt=""></div>
                             <div class="hobby-title d-flex">
-                                <span class="hobby-span-title-1">شهر بازی پارک ارم</span>
-                                <span class="hobby-span-title">تهران<img src="./assets/photos/Vector.svg" alt=""></span>
-                            </div>
-                            <div class="hobby-btn d-flex align-items-center justify-content-center">
-                                <span class="hobby-span-btn">بزن بریم</span>
-                            </div>
-                        </div>
-                        </div>
-
-                        <div class="slides-2"><!-- div slide -->
-                            <div class="hobby-div">
-                            <div class="hobby-slide"><img class="hobby-slide-img" src="./assets/photos/Frame 1116606927.svg" alt=""></div>
-                            <div class="hobby-title d-flex">
-                                <span class="hobby-span-title-1">شهر بازی پارک ارم</span>
-                                <span class="hobby-span-title">تهران<img src="./assets/photos/Vector.svg" alt=""></span>
-                            </div>
-                            <div class="hobby-btn d-flex align-items-center justify-content-center">
-                                <span class="hobby-span-btn">بزن بریم</span>
-                            </div>
-                        </div>
-                        </div>
-
-                        <div class="slides-2"><!-- div slide -->
-                            <div class="hobby-div">
-                            <div class="hobby-slide"><img class="hobby-slide-img" src="./assets/photos/Frame 1116606927.svg" alt=""></div>
-                            <div class="hobby-title d-flex">
-                                <span class="hobby-span-title-1">شهر بازی پارک ارم</span>
+                                <span class="hobby-span-title-1">موزه اسباب بازی</span>
                                 <span class="hobby-span-title">تهران<img src="./assets/photos/Vector.svg" alt=""></span>
                             </div>
                             <div class="hobby-btn d-flex align-items-center justify-content-center">
