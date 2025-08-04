@@ -1,47 +1,5 @@
-// تابع بارگذاری لیست کاربران
-// function loadUserList() {
-//     fetch('http://localhost:8000/api/users?per_page=15&sort_by&sort_type', {
-//       method: 'GET',
-//       headers: {
-//         'Authorization': 'Bearer ' + localStorage.getItem('token')
-//       }
-//     })
-//       .then(response => {
-//         if (!response.ok) {
-//           throw new Error('خطا در دریافت داده‌ها: ' + response.status);
-//         }
-//         return response.json();
-//       })
-//       .then(data => {
-//         const userList = document.getElementById('userList');
-//         userList.innerHTML = ''; // پاک کردن محتوای قبلی
-  
-//         if (Array.isArray(data.result.data)) {
-//           data.result.data.forEach(user => {
-//             const row = document.createElement('tr');
-//             row.innerHTML = `
-//               <td>${user.id || 'N/A'}</td>
-//               <td>${user.fname+ ' ' + user.lname || 'N/A'}</td>
-//               <td>${user.email || 'N/A'}</td>
-//               <td>${user.group.name || 'بدون گروه'}</td>
-//             `;
-//             userList.appendChild(row);
-//           });
-//         } else {
-//           console.error('داده‌ها آرایه نیستند:', data);
-//         }
-//       })
-//       .catch(error => console.error('خطا:', error));
-//   }
-  
-//   // فراخوانی در بارگذاری اولیه صفحه
-//   document.addEventListener('DOMContentLoaded', () => {
-//     loadUserList();
-//   });
-  
-
 // تابع بارگذاری لیست کاربران با async و await
-async function loadUserList() {
+async function loadUserList(page = 1) {
     try {
         const response = await fetch('http://localhost:8000/api/users?per_page=15&sort_by&sort_type', {
             method: 'GET',
@@ -69,13 +27,41 @@ async function loadUserList() {
                 `;
                 userList.appendChild(row);
             });
-        } else {
-            console.error('داده‌ها آرایه نیستند:', data);
-        }
+         } //else {
+        //     console.error('داده‌ها آرایه نیستند:', data);
+        // }
+        renderPagination(data.result);
     } catch (error) {
         console.error('خطا:', error);
     }
 }
+
+// صفحه بندی
+function renderPagination(paginationData) {
+  const pagination = document.getElementById('pagination');
+  pagination.innerHTML = '';
+
+  const totalPages = paginationData.last_page;
+  const currentPage = paginationData.current_page;
+
+  for (let i = 1; i <= totalPages; i++) {
+      const li = document.createElement('li');
+      li.className = `page-item ${i === currentPage ? 'active' : ''}`;
+      
+      const a = document.createElement('a');
+      a.className = 'page-link';
+      a.href = '#';
+      a.innerText = i;
+      a.addEventListener('click', (e) => {
+          e.preventDefault();
+          loadUserList(i); // بارگذاری داده‌های صفحه جدید
+      });
+
+      li.appendChild(a);
+      pagination.appendChild(li);
+  }
+}
+
 
 // فراخوانی در بارگذاری اولیه صفحه
 document.addEventListener('DOMContentLoaded', () => {
@@ -107,7 +93,7 @@ document.addEventListener('DOMContentLoaded', () => {
           usernSelect.appendChild(option);
         });
   
-        // ✅ فعال‌سازی Selectize بعد از پر شدن
+        //  فعال‌سازی Selectize بعد از پر شدن
         $('#usern').selectize({
           create: false,
           sortField: 'text',
@@ -278,73 +264,6 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 // افزودن پزشک
-// document.addEventListener('DOMContentLoaded', () => {
-//     console.log('اسکریپت لود شد'); // لاگ برای چک کردن لود اسکریپت
-//     const addDoctorButton = document.getElementById('addDoctor');
-//     if (!addDoctorButton) {
-//         console.error('دکمه با id="addDoctor" پیدا نشد!');
-//         return;
-//     }
-//     console.log('دکمه پیدا شد، افزودن رویداد کلیک');
-//     addDoctorButton.addEventListener('click', function (e) {
-//         console.log('دکمه کلیک شد'); // لاگ برای چک کردن کلیک
-
-//         // جمع‌آوری داده‌های فرم
-//         const doctorId = document.getElementById('doctor').value; // ID از لیست انتخاب
-//         const specialty = document.getElementById('specialty').value;
-//         const licenseNumber = document.getElementById('license_Number').value;
-//         const address = document.getElementById('address').value;
-//         const workingHours = document.getElementById('working_hours').value;
-//         console.log('داده‌های جمع‌آوری‌شده:', { doctorId, specialty, licenseNumber, address, workingHours }); // لاگ داده‌ها
-
-//         // اعتبارسنجی ساده
-//         if (!specialty || !licenseNumber || !address || !workingHours) {
-//             console.log('اعتبارسنجی ناموفق: برخی فیلدها خالی‌اند'); // لاگ برای اعتبارسنجی ناموفق
-//             alert('لطفاً تمام فیلدها را پر کنید.');
-//             return;
-//         }
-//         console.log('اعتبارسنجی موفق'); // لاگ برای اعتبارسنجی موفق
-
-//         // آماده‌سازی داده برای ارسال
-//         const doctorData = {
-//             doctorId, // اگر ID لازمه (مثلاً برای لینک به کاربر موجود)
-//             specialty,
-//             licenseNumber,
-//             address,
-//             workingHours
-//         };
-//         console.log('داده‌های آماده‌شده برای ارسال:', doctorData); // لاگ داده‌های آماده
-
-//         // ارسال درخواست به API برای افزودن پزشک
-//         fetch('http://localhost:8000/api/doctors', {
-//             method: 'POST',
-//             headers: {
-//                 'Authorization': 'Bearer ' + localStorage.getItem('token'),
-//                 'Content-Type': 'application/json'
-//             },
-//             body: JSON.stringify(doctorData)
-//         })
-//             .then(response => {
-//                 console.log('پاسخ سرور دریافت شد، وضعیت:', response.status); // لاگ وضعیت پاسخ
-//                 if (!response.ok) {
-//                     throw new Error('خطا در افزودن پزشک: ' + response.status);
-//                 }
-//                 return response.json();
-//             })
-//             .then(data => {
-//                 console.log('پاسخ موفق از API:', data); // لاگ داده‌های برگشتی
-//                 alert('✅ پزشک با موفقیت اضافه شد');
-//                 document.getElementById('addUserForm').reset(); // پاک کردن فرم
-//                 // اگر نیازه لیست پزشکان دوباره لود بشه، تابع مربوطه رو فراخوانی کنید
-//                 // updateDoctorList();
-//             })
-//             .catch(error => {
-//                 console.error('خطا در افزودن پزشک:', error); // لاگ خطا
-//                 alert('خطایی رخ داد. لطفاً دوباره تلاش کنید.');
-//             });
-//     });
-// });
-
 document.addEventListener('DOMContentLoaded', () => {
     console.log('اسکریپت لود شد');
     const addDoctorButton = document.getElementById('addDoctor');
@@ -412,3 +331,8 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 });
+
+
+// صفحه بندی
+
+
