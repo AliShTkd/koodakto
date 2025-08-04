@@ -1,40 +1,4 @@
 // تابع بارگذاری لیست کاربران با async و await
-// async function loadUserList(page = 1) {
-//     try {
-//         const response = await fetch('http://localhost:8000/api/users?per_page=15&sort_by&sort_type', {
-//             method: 'GET',
-//             headers: {
-//                 'Authorization': 'Bearer ' + localStorage.getItem('token')
-//             }
-//         });
-
-//         if (!response.ok) {
-//             throw new Error('خطا در دریافت داده‌ها: ' + response.status);
-//         }
-
-//         const data = await response.json();
-//         const userList = document.getElementById('userList');
-//         userList.innerHTML = ''; // پاک کردن محتوای قبلی
-
-//         if (Array.isArray(data.result.data)) {
-//             data.result.data.forEach(user => {
-//                 const row = document.createElement('tr');
-//                 row.innerHTML = `
-//                     <td>${user.id || 'N/A'}</td>
-//                     <td>${user.fname + ' ' + user.lname || 'N/A'}</td>
-//                     <td>${user.email || 'N/A'}</td>
-//                     <td>${user.group.name || 'بدون گروه'}</td>
-//                 `;
-//                 userList.appendChild(row);
-//             });
-//          } //else {
-//         //     console.error('داده‌ها آرایه نیستند:', data);
-//         // }
-//         renderPagination(data.result);
-//     } catch (error) {
-//         console.error('خطا:', error);
-//     }
-// }
 
 async function loadUserList(page = 1) {
   try {
@@ -72,30 +36,6 @@ async function loadUserList(page = 1) {
 
 
 // صفحه بندی
-// function renderPagination(paginationData) {
-//   const pagination = document.getElementById('pagination');
-//   pagination.innerHTML = '';
-
-//   const totalPages = paginationData.last_page;
-//   const currentPage = paginationData.current_page;
-
-//   for (let i = 1; i <= totalPages; i++) {
-//       const li = document.createElement('li');
-//       li.className = `page-item ${i === currentPage ? 'active' : ''}`;
-      
-//       const a = document.createElement('a');
-//       a.className = 'page-link';
-//       a.href = '#';
-//       a.innerText = i;
-//       a.addEventListener('click', (e) => {
-//           e.preventDefault();
-//           loadUserList(i); // بارگذاری داده‌های صفحه جدید
-//       });
-
-//       li.appendChild(a);
-//       pagination.appendChild(li);
-//   }
-// }
 function renderPagination(currentPage, totalPages) {
   const pagination = document.getElementById('pagination');
   pagination.innerHTML = '';
