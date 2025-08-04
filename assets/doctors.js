@@ -51,7 +51,7 @@ document.addEventListener('DOMContentLoaded', async () => {
             <p>${bio}</p>
           </div>
           <div class="product-card-btn">
-            <a href="modares.html?id=${doctor.id}">
+            <a href="doctor.html?id=${doctor.id}">
               <button><img src="./assets/photos/direction-left.svg" alt=""></button>
             </a>
           </div>
