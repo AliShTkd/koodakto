@@ -138,52 +138,57 @@
     </div>
 
 
-    <div class="mt-5">
-      <div class="card">
-        <div class="card-header text-white text-center">
-          افزودن پزشک جدید
-        </div>
-        <div class="card-body">
-          <form id="addUserForm">
-            <!-- نام پزشک (از لیست) -->
-            <div class="mb-3">
-              <label for="doctor" class="form-label">نام پزشک</label>
-              <select class="form-select" id="doctor" required>
-                <!-- گزینه‌ها از API دریافت و اضافه می‌شوند -->
-              </select>
-            </div>
-    
-            <!-- تخصص -->
-            <div class="mb-3">
-              <label for="specialty" class="form-label">تخصص</label>
-              <input type="text" class="form-control" id="specialty" required />
-            </div>
-    
-            <!-- شماره نظام پزشکی -->
-            <div class="mb-3">
-              <label for="licenseNumber" class="form-label">شماره نظام پزشکی</label>
-              <input type="text" class="form-control" id="license_Number" required />
-            </div>
-    
-            <!-- آدرس مطب -->
-            <div class="mb-3">
-              <label for="address" class="form-label">آدرس مطب</label>
-              <textarea class="form-control" id="address" rows="2" required></textarea>
-            </div>
-    
-            <!-- ساعت کاری -->
-            <div class="mb-3">
-              <label for="workingHours" class="form-label">ساعات کاری</label>
-              <input type="text" class="form-control" id="working_hours" placeholder="مثلاً: ۹ تا ۱۷" required />
-            </div>
-    
-            <!-- دکمه افزودن -->
-            <button type="submit" id="addDoctor" class="btn btn-success w-100">افزودن پزشک</button>
-          </form>
-        </div>
-      </div>
+<div class="mt-5">
+  <div class="card">
+    <div class="card-header text-white text-center">
+      افزودن پزشک جدید
     </div>
-    
+    <div class="card-body">
+      <form id="addUserForm">
+        <!-- نام پزشک (از لیست) -->
+        <div class="mb-3">
+          <label for="doctor" class="form-label">نام پزشک</label>
+          <select class="form-select" id="doctor" required>
+            <!-- گزینه‌ها از API دریافت و اضافه می‌شوند -->
+          </select>
+        </div>
+
+        <!-- تخصص -->
+        <div class="mb-3">
+          <label for="specialty" class="form-label">تخصص</label>
+          <input type="text" class="form-control" id="specialty" required />
+        </div>
+
+        <!-- شماره نظام پزشکی -->
+        <div class="mb-3">
+          <label for="licenseNumber" class="form-label">شماره نظام پزشکی</label>
+          <input type="text" class="form-control" id="licenseNumber" required /> <!-- اصلاح ID -->
+        </div>
+
+        <!-- آدرس مطب -->
+        <div class="mb-3">
+          <label for="address" class="form-label">آدرس مطب</label>
+          <textarea class="form-control" id="address" rows="2" required></textarea>
+        </div>
+
+        <!-- ساعت کاری -->
+        <div class="mb-3">
+          <label for="workingHours" class="form-label">ساعات کاری</label>
+          <input type="text" class="form-control" id="working_hours" placeholder="مثلاً: ۹ تا ۱۷" required />
+        </div>
+
+        <!-- بیوگرافی -->
+        <div class="mb-3">
+          <label for="bio" class="form-label">بیوگرافی</label>
+          <textarea class="form-control" id="bio" rows="2" required></textarea>
+        </div>
+
+        <!-- دکمه افزودن -->
+        <button type="button" id="addDoctor" class="btn btn-success w-100">افزودن پزشک</button>
+      </form>
+    </div>
+  </div>
+</div>
 
   </div>
 </div>

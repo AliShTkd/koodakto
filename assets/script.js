@@ -187,8 +187,10 @@ document.addEventListener("DOMContentLoaded",function(){
   let signEmailInput = document.getElementById("signEmailInput")
   let signNumberInput = document.getElementById("signNumberInput")
   let userPassInput = document.getElementById ("userPassInput")
+  
   let userPassError = document.getElementById ("userPassError")
   let signNameError = document.getElementById("signNameError")
+  let signLnameError = document.getElementById("signLnameError")
   let signEmailError = document.getElementById("signEmailError")
   let signNumberError = document.getElementById("signNumberError")
   let signinBtn = document.getElementById("signinBtn")
@@ -197,28 +199,41 @@ document.addEventListener("DOMContentLoaded",function(){
     event.preventDefault();
 
     signNameError.textContent = "";
+    signLnameError.textContent = "";
     signEmailError.textContent = "";
     signNumberError.textContent = "";
     userPassError.textContent = "";
 
     let isValid = true
-    let name = signNameInput.value.trim();
+    let fname = signNameInput.value.trim();
+    let lname = signLnameInput.value.trim();
     let email = signEmailInput.value.trim();
     let number = signNumberInput.value.trim();
     let signPassword =  userPassInput.value.trim ();
 
-    if(name === ""){
+    if(fname === ""){
       signEmailError.textContent = "نام و نام خانوادگی را وارد کنید"
       isValid = false
      }
-     if (/^\d+$/.test(name)){
+     if (/^\d+$/.test(fname)){
       signNameError.textContent = "نام و نام خانوادگی نمیتواند عدد باشد"
       isValid = false;
     }
-    if(name.length<2){
-      signNameError.textContent = "نام و نام خانوادگی باید بیشتر از 2 کارکتر باشد ";
+    if(fname.length<2){
+      signNameError.textContent = "نام باید بیشتر از 2 کارکتر باشد ";
     }
 
+    if(lname === ""){
+      signLnameError.textContent = "نام خانوادگی را وارد کنید"
+      isValid = false
+     }
+     if (/^\d+$/.test(lname)){
+      signLnameError.textContent = "نام خانوادگی نمیتواند عدد باشد"
+      isValid = false;
+    }
+    if(lname.length<2){
+      signLnameError.textContent = "نام خانوادگی باید بیشتر از 2 کارکتر باشد ";
+    }
    
     if(number.length<11){
       signNumberError.textContent = "شماره نمیتواند کم تر از 11 رقم باشد "
@@ -251,7 +266,8 @@ document.addEventListener("DOMContentLoaded",function(){
 
     if (isValid) {
       const payload = {
-        name: name,
+        fname: fname,
+        lname: lname,
         email: email,
         phone: number,
         password: signPassword
@@ -284,6 +300,187 @@ document.addEventListener("DOMContentLoaded",function(){
  })
 })
 
+
+
+
+// تابع بارگذاری لیست کاربران
+function loadUserList() {
+  fetch('http://localhost:8000/api/users', {
+    method: 'GET',
+    headers: {
+      'Authorization': 'Bearer ' + localStorage.getItem('token')
+    }
+  })
+    .then(response => {
+      if (!response.ok) {
+        throw new Error('خطا در دریافت داده‌ها: ' + response.status);
+      }
+      return response.json();
+    })
+    .then(data => {
+      const userList = document.getElementById('userList');
+      userList.innerHTML = ''; // پاک کردن محتوای قبلی
+
+      if (Array.isArray(data.result.data)) {
+        data.result.data.forEach(user => {
+          const row = document.createElement('tr');
+          row.innerHTML = `
+            <td>${user.id || 'N/A'}</td>
+            <td>${user.fname+" "+ user.lname || 'N/A'}</td>
+            <td>${user.email || 'N/A'}</td>
+            <td>${user.group.name || 'بدون گروه'}</td>
+          `;
+          userList.appendChild(row);
+        });
+      } else {
+        console.error('داده‌ها آرایه نیستند:', data);
+      }
+    })
+    .catch(error => console.error('خطا:', error));
+}
+
+// فراخوانی در بارگذاری اولیه صفحه
+document.addEventListener('DOMContentLoaded', () => {
+  loadUserList();
+});
+
+
+
+
+
+// selectlist ایمیل و نام کاربران
+document.addEventListener('DOMContentLoaded', () => {
+  fetch('http://localhost:8000/api/users/all', {
+    method: 'GET',
+    headers: {
+      'Authorization': 'Bearer ' + localStorage.getItem('token')
+    }
+  })
+    .then(response => {
+      if (!response.ok) {
+        throw new Error('خطا در دریافت داده‌ها: ' + response.status);
+      }
+      return response.json();
+    })
+    .then(response => {
+      const usernSelect = document.getElementById('usern');
+      usernSelect.innerHTML = '<option value="" disabled selected>انتخاب ایمیل</option>';
+
+      response.result.forEach(usern => {
+        const option = document.createElement('option');
+        option.value = usern.id;
+        option.textContent = `${usern.email} . ${usern.fname}`;
+        usernSelect.appendChild(option);
+      });
+
+      // ✅ فعال‌سازی Selectize بعد از پر شدن
+      $('#usern').selectize({
+        create: false,
+        sortField: 'text',
+        placeholder: 'انتخاب ایمیل کاربر',
+        dropdownParent: 'body'
+      });
+
+    })
+    .catch(error => console.error('خطا در دریافت نام کاربری:', error));
+});
+
+
+// selectlist نقش ها
+document.addEventListener('DOMContentLoaded', () => {
+  fetch('http://localhost:8000/api/users/groups/all', {
+    method: 'GET',
+    headers: {
+      'Authorization': 'Bearer ' + localStorage.getItem('token') // توکن رو جایگزین کن
+    }
+  })
+  .then(response => {
+    if (!response.ok) {
+      throw new Error('خطا در دریافت داده‌ها: ' + response.status);
+    }
+    return response.json();
+  })
+  .then(response => {
+    const roleSelect = document.getElementById('role');
+    roleSelect.innerHTML = '<option value="" disabled selected>انتخاب نقش</option>';
+    
+    response.result.forEach(role => {
+      const option = document.createElement('option');
+      option.value = role.id;
+      option.textContent = role.name;
+      roleSelect.appendChild(option);
+    });
+
+    // فعال‌سازی Selectize روی لیست نقش‌ها
+    $('#role').selectize({
+      create: false,
+      sortField: 'text',
+      placeholder: 'انتخاب نقش کاربر',
+      dropdownParent: 'body'
+    });
+  })
+  .catch(error => console.error('خطا در دریافت نقش‌ها:', error));
+});
+
+
+
+//کلید ویرایش کاربر
+document.getElementById('addUserForm').addEventListener('submit', function (e) {
+  e.preventDefault(); // جلوگیری از ارسال پیش‌فرض فرم
+
+  const userId = document.getElementById('usern').value;
+  const groupId = document.getElementById('role').value;
+  const selectedEmail = document.getElementById('usern').selectedOptions[0].text.split(' . ')[0];
+
+  // مرحله اول: گرفتن اطلاعات کامل کاربر
+  fetch(`http://localhost:8000/api/users/${userId}`, {
+    method: 'GET',
+    headers: {
+      'Authorization': 'Bearer ' + localStorage.getItem('token'),
+      'Content-Type': 'application/json'
+    }
+  })
+    .then(response => {
+      if (!response.ok) {
+        throw new Error('خطا در دریافت اطلاعات کاربر: ' + response.status);
+      }
+      return response.json();
+    })
+    .then(userData => {
+      const existingUser = userData.result;
+
+      // مرحله دوم: ارسال اطلاعات کامل برای ویرایش
+      return fetch(`http://localhost:8000/api/users/${userId}`, {
+        method: 'PUT',
+        headers: {
+          'Authorization': 'Bearer ' + localStorage.getItem('token'),
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          email: selectedEmail,
+          group_id: groupId,
+          fname: existingUser.fname || "",
+          lname: existingUser.lname || "",
+          phone: existingUser.phone || ""
+        })
+      });
+    })
+    .then(response => {
+      if (!response.ok) {
+        throw new Error('خطا در ویرایش کاربر: ' + response.status);
+      }
+      return response.json();
+    })
+    .then(data => {
+      console.log('کاربر با موفقیت ویرایش شد:', data);
+      alert("✅ کاربر با موفقیت ویرایش شد");
+      location.reload();// ریلود صفحه
+
+      // بروزرسانی لیست کاربران
+      updateUserList();
+    })
+   
+});
 
 
 
