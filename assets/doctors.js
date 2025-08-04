@@ -8,44 +8,60 @@ document.addEventListener('DOMContentLoaded', async () => {
       }
     });
 
-    if (!response.ok) {
-      throw new Error('خطا در دریافت اطلاعات پزشکان: ' + response.status);
-    }
+    if (!response.ok) throw new Error('خطا در دریافت اطلاعات پزشکان: ' + response.status);
 
     const data = await response.json();
     console.log(data); // برای دیباگ
 
-    const container = document.querySelector('.doctors-list');
-    container.innerHTML = ''; // پاک کردن محتوای قبلی
+    const container = document.querySelector('.product-product');
+    container.innerHTML = ''; // پاک کردن محتوای نمونه قبلی
 
-    if (Array.isArray(data.result.data)) {
-      data.result.data.forEach(doctor => {
-        const fullName = `${doctor.user.fname} ${doctor.user.lname}`;
-        const specialty = doctor.specialty ?? 'بدون تخصص';
-        const phone = doctor.user.phone ?? 'نامشخص';
-        const email = doctor.user.email ?? 'نامشخص';
-        const address = doctor.address ?? 'نامشخص';
-        const workingHours = doctor.working_hours ?? 'ساعت کاری نامشخص';
-        const bio = doctor.bio ?? 'بدون بیوگرافی';
+    const doctors = data.result.data;
+    const cardsPerRow = 4;
+    let rowDiv = null;
 
-        const doctorCard = `
-          <div class="doctor-card bg-white p-3 mb-3 shadow rounded">
-            <h5 class="mb-2">${fullName}</h5>
-            <p><strong>تخصص:</strong> ${specialty}</p>
-            <p><strong>تلفن:</strong> ${phone}</p>
-            <p><strong>ایمیل:</strong> ${email}</p>
-            <p><strong>آدرس:</strong> ${address}</p>
-            <p><strong>ساعات کاری:</strong> ${workingHours}</p>
-            <p><strong>بیو:</strong> ${bio}</p>
+    doctors.forEach((doctor, index) => {
+      if (index % cardsPerRow === 0) {
+        rowDiv = document.createElement('div');
+        rowDiv.className = 'product-box d-flex row mb-5';
+        container.appendChild(rowDiv);
+      }
+
+      const fullName = `${doctor.user.fname} ${doctor.user.lname}`;
+      const specialty = doctor.specialty ?? 'تخصص مشخص نیست';
+      const city = doctor.address?.split('،')[0] ?? 'نامشخص'; // مثلاً: "گرگان، ..."
+      const bio = doctor.bio ?? 'بدون توضیحات';
+      const cardHTML = `
+        <div class="product-card col-lg-2">
+          <div class="product-card-nav d-flex justify-content-between">
+            <div class="product-card-nav-right d-flex">
+              <div class="product-card-nav-right-photo">
+                <img src="./assets/photos/Frame 1116606979 (1).svg" alt="">
+              </div>
+              <div class="product-card-nav-right-text">
+                <h4>${fullName}</h4>
+                <p>${specialty}</p>
+              </div>
+            </div>
+            <div class="product-card-nav-left">
+              <p>${city}</p>
+            </div>
           </div>
-        `;
+          <div class="product-card-text">
+            <p>${bio}</p>
+          </div>
+          <div class="product-card-btn">
+            <a href="modares.html?id=${doctor.id}">
+              <button><img src="./assets/photos/direction-left.svg" alt=""></button>
+            </a>
+          </div>
+        </div>
+      `;
 
-        container.insertAdjacentHTML('beforeend', doctorCard);
-      });
-    } else {
-      console.error('داده‌های دریافت شده آرایه نیستند');
-    }
+      rowDiv.insertAdjacentHTML('beforeend', cardHTML);
+    });
+
   } catch (error) {
-    console.error('خطا:', error.message);
+    console.error('خطا:', error);
   }
 });
