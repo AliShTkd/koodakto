@@ -12,3 +12,44 @@
         flex: 0 0 calc(52%)
     }
 }
+
+
+
+
+
+
+@media only screen and (max-width: 1024px){
+    .jadid-div{
+        height: 80rem;
+    }
+  
+}
+
+@media only screen and (max-width: 992px){
+   
+    .jadid-div{
+        height: 80rem;
+    }
+}
+
+@media only screen and (max-width: 768px){
+    .jadid-div{
+        height: 84rem;
+        
+    }
+    .webloge-img{
+        height: 10rem;
+          width: 15rem !important;
+       }
+}
+
+@media only screen and (max-width: 500px){
+    .jadid-div{
+       
+        margin-top: 4rem !important;
+    }
+    .mataleb-div{
+        height: 50rem;
+    }
+}
+

@@ -561,6 +561,7 @@ text-align: justify;
 .mataleb-div{
   border: 1px solid #DBDBDB;
   border-radius: 40px;
+  height: 43rem;
 }
 .mataleb-div-1{
   padding: 15px;
@@ -577,7 +578,7 @@ text-align: justify;
 .jadid-div{
   border: 1px solid #DBDBDB;
   border-radius: 40px;
-  height: 599px;
+  height: 73rem;
 }
 .jadid-div-1{
    padding: 15px;
@@ -1271,6 +1272,16 @@ color: red;
       background-color:#FDE7FF !important;
     }
   
+.a-age-section {
+  text-decoration: none !important;
+  color: black !important;
+}
+
+
+
+
+
+
 
 
   
