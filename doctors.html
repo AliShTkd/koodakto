@@ -1,28 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-
-  <link rel="stylesheet" href="./assets/style.css">
-
-  <!-- Bootstrap -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-
-  <!-- jQuery -->
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-
-  <!-- Selectize CSS -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/selectize@0.12.6/dist/css/selectize.default.css" />
-
-  <!-- Selectize JS -->
-  <script src="https://cdn.jsdelivr.net/npm/selectize@0.12.6/dist/js/standalone/selectize.min.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./assets/style.css">
+    <link rel="stylesheet" href="./assets/responsive.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </head>
 <body>
-   <header class="container mt-4 nav-bar">
-         <div class="row align-items-center justify-content-between flex-nowrap">
+    <!-- start header -->
+        <header class="container mt-4 nav-bar">
+           <div class="row align-items-center justify-content-between flex-nowrap">
 
                 <!-- لوگو -->
                 <div class="col-auto nav-box-icon">
@@ -73,6 +63,15 @@
                   <img src="./assets/photos/shopping basket 02.svg" alt="">
                   <a href="productsPage.html">محصولات</a>
                 </li>
+                 </li>
+                   <li class="nav-li d-flex align-items-center">
+                    <img src="./assets/photos/shopping basket 02.svg" alt="">
+                    <a href="basket.html">سبد خرید</a>
+                  </li>
+                   <li class="nav-li d-flex align-items-center">
+                    <img src="./assets/photos/shopping basket 02.svg" alt="">
+                    <a href="usermanager.html">مدیریت کاربران</a>
+                  </li>
                 <li class="d-flex align-items-center justify-content-center">
                     <a href="login.html"><img class="combo-icon" src="./assets/photos/Combo shape.svg" alt=""></a>
                 </li>
@@ -82,121 +81,45 @@
           </header> 
         <!-- end header -->
 
-<div class="container mt-5">
-  <div class="row justify-content-center">
+     
 
-    <!-- فرم افزودن کاربر -->
-    <div class="col-lg-5">
-      <div class="card">
-        <div class="card-header text-white text-center">
-          افزودن کاربر جدید
-        </div>
-        <div class="card-body">
-          <form id="addUserForm">
-            <div class="mb-3">
-              <label for="usern" class="form-label">نام کاربری</label>
-              <select class="form-select" id="usern" required>
-                <!-- گزینه‌ها از API دریافت و اضافه می‌شوند -->
-              </select>
-            </div>
-            <div class="mb-3">
-              <label for="role" class="form-label">نقش کاربر</label>
-              <select class="form-select" id="role" required>
-                <!-- گزینه‌ها از API دریافت و اضافه می‌شوند -->
-              </select>
-            </div>
-            <!-- <button type="submit" id="updateUser" class=" edit-user btn w-100">ویرایش کاربر</button> -->
-            <button type="submit" id="updateUser" class="btn btn-success w-100">ویرایش کاربر</button>
-          </form>
-        </div>
-      </div>
-    </div>
+        <!-- section start -->
 
-      <!-- لیست کاربران -->
-      <div class="col-lg-7 mb-4">
-        <div class="card">
-          <div class="card-header text-white text-center">
-            لیست کاربران سیستم
+        <div class="product-product container mt-5">
+                <div class="product-box d-flex row mb-5">
+                    <div class="product-card col-lg-2">
+                        <div class="product-card-nav d-flex justify-content-between">
+                            <div class="product-card-nav-right d-flex">
+                                <div class="product-card-nav-right-photo">
+                                    <img src="./assets/photos/Frame 1116606979 (1).svg" alt="">
+                                </div>
+                                <div class="product-card-nav-right-text ">
+                                    <h4>علی عباسی</h4>
+                                    <p>مدرس ریاضیات تخصصی</p>
+                                </div>
+                            </div>
+                            <div class="product-card-nav-left">
+                                <p>تهران</p>
+                            </div>
+                        </div>
+                        <div class="product-card-text">
+                            <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک است، چاپگرها و متون بلکه.</p>
+                        </div>
+                        <div class="product-card-btn">
+                           <a href="./doctor.html"><button><img src="./assets/photos/direction-left.svg" alt=""></button></a>
+                        </div>
+                    </div>
+
+
+                </div>
           </div>
-          <div class="card-body">
-            <table class="table table-striped table-hover text-center align-middle">
-  
-              <thead class="table-light">
-                <tr>
-                  <th>شناسه</th>
-                  <th>نام کاربری</th>
-                  <th>ایمیل کاربر</th>
-                  <th>نقش</th>
-                </tr>
-              </thead>
-              <tbody id="userList">
-                <!-- ردیف‌ها به صورت داینامیک اضافه می‌شوند -->
-              </tbody>
-            </table>
-          </div>
-        </div>
-      </div>
-      <nav>
-        <ul id="pagination" class="pagination justify-content-center mt-3"></ul>
-      </nav>
+
+          
+        <!-- section end -->
 
 
-<div class="mt-5">
-  <div class="card">
-    <div class="card-header text-white text-center">
-      افزودن پزشک جدید
-    </div>
-    <div class="card-body">
-      <form id="addUserForm">
-        <!-- نام پزشک (از لیست) -->
-        <div class="mb-3">
-          <label for="doctor" class="form-label">نام پزشک</label>
-          <select class="form-select" id="doctor" required>
-            <!-- گزینه‌ها از API دریافت و اضافه می‌شوند -->
-          </select>
-        </div>
 
-        <!-- تخصص -->
-        <div class="mb-3">
-          <label for="specialty" class="form-label">تخصص</label>
-          <input type="text" class="form-control" id="specialty" required />
-        </div>
-
-        <!-- شماره نظام پزشکی -->
-        <div class="mb-3">
-          <label for="licenseNumber" class="form-label">شماره نظام پزشکی</label>
-          <input type="text" class="form-control" id="licenseNumber" required /> <!-- اصلاح ID -->
-        </div>
-
-        <!-- آدرس مطب -->
-        <div class="mb-3">
-          <label for="address" class="form-label">آدرس مطب</label>
-          <textarea class="form-control" id="address" rows="2" required></textarea>
-        </div>
-
-        <!-- ساعت کاری -->
-        <div class="mb-3">
-          <label for="workingHours" class="form-label">ساعات کاری</label>
-          <input type="text" class="form-control" id="working_hours" placeholder="مثلاً: ۹ تا ۱۷" required />
-        </div>
-
-        <!-- بیوگرافی -->
-        <div class="mb-3">
-          <label for="bio" class="form-label">بیوگرافی</label>
-          <textarea class="form-control" id="bio" rows="2" required></textarea>
-        </div>
-
-        <!-- دکمه افزودن -->
-        <button type="button" id="addDoctor" class="btn btn-success w-100">افزودن پزشک</button>
-      </form>
-    </div>
-  </div>
-</div>
-
-  </div>
-</div>
-
-  <!-- start footer -->
+        <!-- start footer -->
         <footer>
             <div class="container">
                 <div class="footer-content row">
@@ -250,10 +173,8 @@
                 <div class="m-3"><img src="./assets/photos/instagram.svg" alt=""></div>
             </div>
         </footer>
-   <!-- end footer -->
+         <!-- end footer -->
 
-<script src="./assets/user-management.js"></script>
-
-
+         <script src="./assets/doctors.js"></script>
 </body>
 </html>

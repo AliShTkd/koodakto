@@ -187,8 +187,10 @@ document.addEventListener("DOMContentLoaded",function(){
   let signEmailInput = document.getElementById("signEmailInput")
   let signNumberInput = document.getElementById("signNumberInput")
   let userPassInput = document.getElementById ("userPassInput")
+  
   let userPassError = document.getElementById ("userPassError")
   let signNameError = document.getElementById("signNameError")
+  let signLnameError = document.getElementById("signLnameError")
   let signEmailError = document.getElementById("signEmailError")
   let signNumberError = document.getElementById("signNumberError")
   let signinBtn = document.getElementById("signinBtn")
@@ -197,28 +199,41 @@ document.addEventListener("DOMContentLoaded",function(){
     event.preventDefault();
 
     signNameError.textContent = "";
+    signLnameError.textContent = "";
     signEmailError.textContent = "";
     signNumberError.textContent = "";
     userPassError.textContent = "";
 
     let isValid = true
-    let name = signNameInput.value.trim();
+    let fname = signNameInput.value.trim();
+    let lname = signLnameInput.value.trim();
     let email = signEmailInput.value.trim();
     let number = signNumberInput.value.trim();
     let signPassword =  userPassInput.value.trim ();
 
-    if(name === ""){
+    if(fname === ""){
       signEmailError.textContent = "نام و نام خانوادگی را وارد کنید"
       isValid = false
      }
-     if (/^\d+$/.test(name)){
+     if (/^\d+$/.test(fname)){
       signNameError.textContent = "نام و نام خانوادگی نمیتواند عدد باشد"
       isValid = false;
     }
-    if(name.length<2){
-      signNameError.textContent = "نام و نام خانوادگی باید بیشتر از 2 کارکتر باشد ";
+    if(fname.length<2){
+      signNameError.textContent = "نام باید بیشتر از 2 کارکتر باشد ";
     }
 
+    if(lname === ""){
+      signLnameError.textContent = "نام خانوادگی را وارد کنید"
+      isValid = false
+     }
+     if (/^\d+$/.test(lname)){
+      signLnameError.textContent = "نام خانوادگی نمیتواند عدد باشد"
+      isValid = false;
+    }
+    if(lname.length<2){
+      signLnameError.textContent = "نام خانوادگی باید بیشتر از 2 کارکتر باشد ";
+    }
    
     if(number.length<11){
       signNumberError.textContent = "شماره نمیتواند کم تر از 11 رقم باشد "
@@ -251,7 +266,8 @@ document.addEventListener("DOMContentLoaded",function(){
 
     if (isValid) {
       const payload = {
-        name: name,
+        fname: fname,
+        lname: lname,
         email: email,
         phone: number,
         password: signPassword
@@ -285,6 +301,8 @@ document.addEventListener("DOMContentLoaded",function(){
 })
 
 
+
+
 // تابع بارگذاری لیست کاربران
 function loadUserList() {
   fetch('http://localhost:8000/api/users', {
@@ -308,7 +326,7 @@ function loadUserList() {
           const row = document.createElement('tr');
           row.innerHTML = `
             <td>${user.id || 'N/A'}</td>
-            <td>${user.name || 'N/A'}</td>
+            <td>${user.fname+" "+ user.lname || 'N/A'}</td>
             <td>${user.email || 'N/A'}</td>
             <td>${user.group.name || 'بدون گروه'}</td>
           `;
@@ -351,7 +369,7 @@ document.addEventListener('DOMContentLoaded', () => {
       response.result.forEach(usern => {
         const option = document.createElement('option');
         option.value = usern.id;
-        option.textContent = `${usern.email} . ${usern.name}`;
+        option.textContent = `${usern.email} . ${usern.fname}`;
         usernSelect.appendChild(option);
       });
 
@@ -441,7 +459,8 @@ document.getElementById('addUserForm').addEventListener('submit', function (e) {
         body: JSON.stringify({
           email: selectedEmail,
           group_id: groupId,
-          name: existingUser.name || "",
+          fname: existingUser.fname || "",
+          lname: existingUser.lname || "",
           phone: existingUser.phone || ""
         })
       });
@@ -462,6 +481,7 @@ document.getElementById('addUserForm').addEventListener('submit', function (e) {
     })
    
 });
+
 
 
 

@@ -64,6 +64,9 @@ header{
 .combo-icon{
 padding: 1rem;
 }
+.khaaneh{
+  color: #AC3DEB !important;
+}
 /* end header */
 
 /* start main */
@@ -77,12 +80,18 @@ padding: 1rem;
 
 }
 .main-color{
-    background: var(--main-color);
+    background-color: #a43dfbf7;
     top: 161px;
     left: 80px;
     border-radius: 48px;
     width: 1280px;
     height: 498px;
+    overflow: hidden;
+}
+.main-color img{
+  width: 88%;
+  height: 140%;
+  object-fit: cover;
 }
 .box-main{
     background: #AC3DEB40;
@@ -122,10 +131,29 @@ padding: 1rem;
   border-bottom-left-radius: 24px;
   border-bottom-right-radius: 24px;
   margin-bottom: 1rem;
+  padding: 0 !important;
+  transition: all 0.3s ease;
+}
+.course-1:hover{
+  transform: scale(1.05);
 }
 .img-box{
     height: 21rem;
+    overflow: hidden;
 }
+.img-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* یا contain بسته به نیازت */
+   border-top-left-radius: 100px;
+  border-top-right-radius: 100px;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+
+
+
 .img-div{
  width: 100%;
  left: 0px;
@@ -215,6 +243,10 @@ padding: 1rem;
     box-shadow: 0px 26px 30px -18px #AC3DEB33;
     align-items: center;
     justify-content: space-between;
+    transition: 0.3s;
+  }
+  .doctor-name:hover{
+    transform: scale(1.05);
   }
   .doctor-icon{
     width: 44px;
@@ -277,8 +309,11 @@ padding: 1rem;
     height: 350px;
     border-radius: 40px;
     box-shadow: 0px 46px 50px -30px #AC3DEB33;
+    transition: 0.3s;
   }
-  
+  .slides:hover{
+    transform: scale(1.05);
+  }
   .slider-track {
     display: flex;
     transition: transform 0.5s ease-in-out;
@@ -339,12 +374,30 @@ padding: 1rem;
   .icon-1{
     width: 10px;
   }
+  .hobby-slide{
+    overflow: hidden;
+  }
+  .hobby-slide-img{
+    height: 100%;
+    width: 100%;
+        height: 160px;
+    object-fit: cover;
+    border-top-right-radius: 120px;
+    border-top-left-radius: 120px;
+    border-bottom-right-radius: 20px;
+    border-bottom-left-radius: 20px;
+  }
   .hobby-btn{
     width: 242px;
     height: 48px;
     background:#FDE7FF ;
     border-radius: 16px;
     margin-top: 20px;
+    transition: 0.3s;
+  }
+  .hobby-btn:hover{
+    transform: scale(1.05);
+    background:#f79bff ;
   }
   .hobby-span-btn{
     font-size: 1.2rem;
@@ -380,6 +433,10 @@ padding: 1rem;
   }
   .hobby-div{
     padding: 15px 21px 10px 20px;
+    transition: 0.3s;
+  }
+  .hobby-div:hover{
+    transform: scale(1.05);
   }
   .hobby-title{
     justify-content: space-between;
@@ -1271,6 +1328,10 @@ color: red;
     .edit-user{
       background-color:#FDE7FF !important;
     }
+   .btn{
+    background-color: #ec46f8 !important;
+   }
+  
   
 .a-age-section {
   text-decoration: none !important;
@@ -1285,5 +1346,82 @@ color: red;
 
 
   
+    
+/* modaresin */
+
+
+     .product-product{
+        
+        top: 19rem;
+        right: 7rem;
+     }
+
+     .product-box{
+        gap:2rem;
+     }
+     .product-card{
+        width: 295px!important;
+        background-color: #ffffff;
+        padding: 10px;
+        border-radius: 28px;
+        box-shadow: 0px 2px 3px 0px rgba(0, 0, 0, 0.16);
+        transition: 0.3s;
+     }
+     .product-card:hover{
+      transform: scale(1.05);
+     }
+     .product-card-text p{
+        font-size: 10px;
+        color: #7e7e7e;
+     }
+     .product-card-nav-right-text p{
+        font-size: 10px;
+        color: #7e7e7e;
+     }
+    .product-card-nav-right-text h4{
+        font-size: 12px;
+    }
+    .product-card-nav-left p{
+        font-size: 10px;
+        color: #bb00ff;
+    }
+    .product-card-nav-right{
+        gap: 5px;
+    }
+    .product-card-btn{
+        display: flex
+        ;
+            justify-content: end;
+    }
+    .product-card-btn button{
+        background-color: #e397ff;
+        border-radius:14px ;
+        border: none;
+    }
+    .product-card-nav-right-photo img{
+          width: 40px;
+    }
+
+
+
+      .text-in-center{
+        text-align: center;
+        font-size: 14px;
+        color: #00189F;
+       margin-top: 2rem;
+       
+      }
+      @media only screen and (max-width:500px){
+        .text-in-center{
+            right: 11rem;
+        }
+       }
+     
+
+
+
+/* modaresin end */
+
+
 
 
