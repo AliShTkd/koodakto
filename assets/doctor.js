@@ -73,6 +73,10 @@ document.addEventListener('DOMContentLoaded', () => {
   const cmInput = document.getElementById('cmInput');
   const commentsContainer = document.querySelector('.doctor-page-left');
 
+  // پاک کردن کامنت‌های پیش‌فرض موجود در HTML
+  const staticComments = commentsContainer.querySelectorAll('.comment-border');
+  staticComments.forEach(comment => comment.remove());
+
   cmBtn.addEventListener('click', async () => {
     const commentText = cmInput.value.trim();
     if (!commentText) return alert('لطفاً متن نظر را وارد کنید');
@@ -94,11 +98,8 @@ document.addEventListener('DOMContentLoaded', () => {
       if (!response.ok) throw new Error('خطا در ثبت نظر');
 
       const resData = await response.json();
-
-      // اطلاعات کاربر را از کامنت برگشتی بگیر
       const { created_by, comment } = resData.result;
 
-      // ایجاد HTML برای کامنت جدید
       const newCommentHTML = `
         <div class="comment-border mt-4">
           <div class="doctor-page-left-comment justify-content-between align-items-center d-flex">
@@ -117,10 +118,7 @@ document.addEventListener('DOMContentLoaded', () => {
         </div>
       `;
 
-      // اضافه کردن به DOM
       commentsContainer.insertAdjacentHTML('beforeend', newCommentHTML);
-
-      // پاک کردن اینپوت
       cmInput.value = '';
 
     } catch (err) {
@@ -129,3 +127,4 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 });
+
