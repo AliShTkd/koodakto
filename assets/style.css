@@ -822,15 +822,17 @@ border: none;
 width: 427px;
 height: 46px;
 margin: 1rem;
+padding: 1rem;
 }
 .input-box-1{
 border-radius: 24px;
 font-size: 1.2rem;
 color: #C2C2C2 ;
 border: none;
-width: 874px;
+width: 895px;
 height: 135px;
 margin: 1rem;
+padding: 1rem;
 }
 .send-btn{
 color: #fff;
