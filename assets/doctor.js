@@ -50,3 +50,82 @@ document.addEventListener('DOMContentLoaded', async () => {
     console.error('خطا در دریافت اطلاعات پزشک:', error);
   }
 });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+document.addEventListener('DOMContentLoaded', () => {
+  const params = new URLSearchParams(window.location.search);
+  const doctorId = params.get('id');
+  if (!doctorId) return alert('شناسه پزشک یافت نشد');
+
+  const cmBtn = document.getElementById('cmBtn');
+  const cmInput = document.getElementById('cmInput');
+  const commentsContainer = document.querySelector('.doctor-page-left');
+
+  cmBtn.addEventListener('click', async () => {
+    const commentText = cmInput.value.trim();
+    if (!commentText) return alert('لطفاً متن نظر را وارد کنید');
+
+    try {
+      const response = await fetch('http://localhost:8000/api/doctors/comments', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': 'Bearer ' + localStorage.getItem('token'),
+          'Accept': 'application/json'
+        },
+        body: JSON.stringify({
+          doctor_id: doctorId,
+          comment: commentText
+        })
+      });
+
+      if (!response.ok) throw new Error('خطا در ثبت نظر');
+
+      const resData = await response.json();
+
+      // اطلاعات کاربر را از کامنت برگشتی بگیر
+      const { created_by, comment } = resData.result;
+
+      // ایجاد HTML برای کامنت جدید
+      const newCommentHTML = `
+        <div class="comment-border mt-4">
+          <div class="doctor-page-left-comment justify-content-between align-items-center d-flex">
+            <div class="doctor-detail-right d-flex align-items-center">
+              <div class="doctor-img"><img src="./assets/photos/Frame 1116606828.svg" alt=""></div>
+              <div class="doctor-p-box">
+                <div><p class="doctor-name-1">${created_by.fname} ${created_by.lname}</p></div>
+                <div><p class="doctor-specialist">مراجعه کننده</p></div>
+              </div>
+            </div> 
+            <div class="doctor-point d-flex">
+              <!-- امتیاز فعلاً بیخیال -->
+            </div>
+          </div>
+          <div class="mt-4"><p class="comment-p-1">${comment}</p></div>
+        </div>
+      `;
+
+      // اضافه کردن به DOM
+      commentsContainer.insertAdjacentHTML('beforeend', newCommentHTML);
+
+      // پاک کردن اینپوت
+      cmInput.value = '';
+
+    } catch (err) {
+      console.error('خطا در ثبت نظر:', err);
+      alert('ثبت نظر با خطا مواجه شد');
+    }
+  });
+});

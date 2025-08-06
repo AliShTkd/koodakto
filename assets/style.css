@@ -786,6 +786,30 @@ font-size: 2.5rem;
   font-size: 1.2rem;
   color: #858585;
 }
+.comment-doctor-footer{
+  gap: 20px;
+  margin-top: 3rem;
+}
+.comment-doctor-title{
+  text-align: center;
+}
+#cmInput{
+  width: 60rem;
+  border-radius: 10px;
+  height: 15vh;
+}
+.comment-doctor-footer-btn{
+  display: flex;
+  align-items: center;
+}
+.cm-btn-dr{
+  padding: 10px;
+  font-size: 15px;
+  border-radius: 10px;
+  background-color: #AC3DEB;
+  border: none;
+  color: white;
+}
 /* end doctor page */
 
 /* start contactUs page */
