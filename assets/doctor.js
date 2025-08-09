@@ -50,3 +50,112 @@ document.addEventListener('DOMContentLoaded', async () => {
     console.error('خطا در دریافت اطلاعات پزشک:', error);
   }
 });
+
+
+
+
+
+
+
+
+
+
+
+
+
+document.addEventListener('DOMContentLoaded', async () => {
+  const params = new URLSearchParams(window.location.search);
+  const doctorId = params.get('id');
+  if (!doctorId) return alert('شناسه پزشک یافت نشد');
+
+  const cmBtn = document.getElementById('cmBtn');
+  const cmInput = document.getElementById('cmInput');
+  const commentsContainer = document.querySelector('.doctor-page-left');
+
+  // پاک کردن کامنت‌های استاتیک قبلی از HTML
+  const staticComments = commentsContainer.querySelectorAll('.comment-border');
+  staticComments.forEach(comment => comment.remove());
+
+  // ✅ تابع ساختن HTML برای کامنت
+  function buildCommentHTML(fname, lname, commentText) {
+    return `
+      <div class="comment-border mt-4">
+        <div class="doctor-page-left-comment justify-content-between align-items-center d-flex">
+          <div class="doctor-detail-right d-flex align-items-center">
+            <div class="doctor-img"><img src="./assets/photos/Frame 1116606828.svg" alt=""></div>
+            <div class="doctor-p-box">
+              <div><p class="doctor-name-1">${fname} ${lname}</p></div>
+              <div><p class="doctor-specialist">مراجعه کننده</p></div>
+            </div>
+          </div> 
+          <div class="doctor-point d-flex">
+            <!-- امتیاز فعلاً بیخیال -->
+          </div>
+        </div>
+        <div class="mt-4"><p class="comment-p-1">${commentText}</p></div>
+      </div>
+    `;
+  }
+
+  // ✅ گرفتن کامنت‌های قبلی از سرور و نمایش آن‌ها
+  async function fetchComments() {
+    try {
+      const response = await fetch(`http://localhost:8000/api/doctors/comments?id=${doctorId}`, {
+        headers: {
+          'Authorization': 'Bearer ' + localStorage.getItem('token'),
+          'Accept': 'application/json'
+        }
+      });
+
+      if (!response.ok) throw new Error('دریافت نظرات ناموفق بود');
+      const data = await response.json();
+
+      data.result.forEach(item => {
+        const { created_by, comment } = item;
+        const commentHTML = buildCommentHTML(created_by.fname, created_by.lname, comment);
+        commentsContainer.insertAdjacentHTML('beforeend', commentHTML);
+      });
+    } catch (err) {
+      console.error('خطا در دریافت نظرات:', err);
+    }
+  }
+
+  // ✅ ثبت نظر جدید
+  cmBtn.addEventListener('click', async () => {
+    const commentText = cmInput.value.trim();
+    if (!commentText) return alert('لطفاً متن نظر را وارد کنید');
+
+    try {
+      const response = await fetch('http://localhost:8000/api/doctors/comments', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': 'Bearer ' + localStorage.getItem('token'),
+          'Accept': 'application/json'
+        },
+        body: JSON.stringify({
+          doctor_id: doctorId,
+          comment: commentText
+        })
+      });
+
+      if (!response.ok) throw new Error('ثبت نظر ناموفق بود');
+
+      const resData = await response.json();
+      const { created_by, comment } = resData.result;
+
+      const newCommentHTML = buildCommentHTML(created_by.fname, created_by.lname, comment);
+      commentsContainer.insertAdjacentHTML('beforeend', newCommentHTML);
+      cmInput.value = '';
+
+    } catch (err) {
+      console.error('خطا در ثبت نظر:', err);
+      alert('ثبت نظر با خطا مواجه شد');
+    }
+  });
+
+  // در نهایت گرفتن لیست اولیه کامنت‌ها
+  await fetchComments();
+});
+
+
