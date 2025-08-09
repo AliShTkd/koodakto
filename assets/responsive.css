@@ -13,7 +13,7 @@
     }
 }
 
-/* <<<<<<< HEAD */
+
 
 
 
@@ -68,7 +68,7 @@
     }
 }
 
-/* ======= */
+
 @media only screen and (max-width: 600px){
       .product-box{
         gap:2rem;
@@ -78,4 +78,4 @@
         display: none;
      }
 }
-/* >>>>>>> 783cfa7d09b59df0e58b1bd128888090581b9f2a */
+
