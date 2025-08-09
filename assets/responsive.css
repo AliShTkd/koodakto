@@ -13,13 +13,16 @@
     }
 }
 
+<<<<<<< HEAD
+
+=======
+>>>>>>> 7fb4552c0784c520fc8a6b37ccbe0fbca6f0456a
 
 
 
 
 
-
-@media only screen and (max-width: 1024px){
+@media only screen and (max-width: 1200px){
     .jadid-div{
         height: 80rem;
     }
@@ -49,10 +52,16 @@
         height: 10rem;
           width: 15rem !important;
        }
+      
+       .jadid-div-2{
+        height: 64rem !important;
+       }
+
        #cmInput {
         width: 60rem;
         height: 30vh;
     }
+
 }
 
 @media only screen and (max-width: 500px){
@@ -61,11 +70,19 @@
         margin-top: 4rem !important;
     }
     .mataleb-div{
-        height: 50rem;
+        height: 54rem;
     }
+
+    .mataleb-div-2{
+        height: 48rem !important;
+    }
+    .jadid-div-2{
+        height: 39rem !important;
+       }
     #cmInput {
         width: 46rem;
     }
+
 }
 
 

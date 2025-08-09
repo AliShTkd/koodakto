@@ -453,6 +453,7 @@ padding: 1rem;
     background: linear-gradient(90deg, #f817ff 0%, #d800ff 100%);
     border-top-right-radius: 40px;
     border-bottom-right-radius: 40px;
+    border-radius: 7rem;
 
     }
     .text-purple {
@@ -1434,6 +1435,7 @@ color: red;
      
 /* modaresin end */
 
+<<<<<<< HEAD
 /*  start add product page */
 
 .add-product-page {
@@ -1450,6 +1452,56 @@ color: red;
 
 /*  end add product page */
 
+=======
+/* weblog khalaghiat kodakan (ilia) */
+.jadid-div-2{
+  border: 1px solid #DBDBDB;
+  border-radius: 40px;
+  height: 43rem;
+}
+.mataleb-div-2{
+  border: 1px solid #DBDBDB;
+  border-radius: 40px;
+  height: 43rem;
+}
+>>>>>>> 7fb4552c0784c520fc8a6b37ccbe0fbca6f0456a
 
+.slide-img-3{
+  border-radius: 2rem;
+  height: 22rem;
+}
 
+.left{
+  display: flex;
+    justify-content: end;
 
+<<<<<<< HEAD
+/*user message page*/
+.user-message-first-container {
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+.user-message-secend-container {
+  display:contents !important;
+}
+.user-message-card{
+  border: 1px solid #d96ce0;
+  margin-left: 10px;
+  padding: 10px 0;
+  border-radius: 20px;
+  margin-top: 10px !important;
+}
+.user-message-card-name{
+  gap: 5px;
+}
+.img-message-card{
+  background-color: #8226B6;
+  border-radius: 10px;
+}
+.user-message-card-text{
+  margin-top: 10px;
+}
+/*user message page end */
+=======
+}
+>>>>>>> 0f5748e246c04b60a57e24889c7c0792c522a422
