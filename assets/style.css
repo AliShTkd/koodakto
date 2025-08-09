@@ -1117,9 +1117,6 @@ font-size: 2.5rem;
   border: none;
 }
 
-
-
-
  .figma-10-sign-up-box-name-box p{
   padding: 1rem 1rem 1rem 0;
   font-size: 1.4rem;
@@ -1365,14 +1362,6 @@ color: red;
   color: black !important;
 }
 
-
-
-
-
-
-
-
-  
     
 /* modaresin */
 
@@ -1444,11 +1433,26 @@ color: red;
         }
        }
      
-
-
-
 /* modaresin end */
 
+<<<<<<< HEAD
+/*  start add product page */
+
+.add-product-page {
+
+  min-height: 100vh;
+}
+.card {
+  transition: all 0.3s ease;
+}
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+}
+
+/*  end add product page */
+
+=======
 /* weblog khalaghiat kodakan (ilia) */
 .jadid-div-2{
   border: 1px solid #DBDBDB;
@@ -1460,6 +1464,7 @@ color: red;
   border-radius: 40px;
   height: 43rem;
 }
+>>>>>>> 7fb4552c0784c520fc8a6b37ccbe0fbca6f0456a
 
 .slide-img-3{
   border-radius: 2rem;
