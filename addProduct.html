@@ -104,35 +104,38 @@
                   <div class="card-body p-4">
                     <h3 class="text-center mb-4 fw-bold text-primary">افزودن محصول جدید</h3>
           
-                    <form>
-                      <!-- اسم محصول -->
-                      <div class="mb-3">
-                        <label for="productName" class="form-label fw-semibold">نام محصول</label>
-                        <input type="text" class="form-control" id="productName" placeholder="نام محصول را وارد کنید" required>
-                      </div>
-          
-                      <!-- قیمت محصول -->
-                      <div class="mb-3">
-                        <label for="productPrice" class="form-label fw-semibold">قیمت محصول (تومان)</label>
-                        <input type="number" class="form-control" id="productPrice" placeholder="قیمت محصول را وارد کنید" required>
-                      </div>
-          
-                      <!-- آپلود عکس -->
-                      <div class="mb-3">
-                        <label for="productImage" class="form-label fw-semibold">عکس محصول</label>
-                        <input class="form-control" type="file" id="productImage" accept="image/*" required>
-                        <div class="text-center mt-3">
-                          <img id="imagePreview" src="" alt="پیش‌نمایش محصول" class="img-fluid rounded shadow-sm d-none" style="max-height: 200px;">
-                        </div>
-                      </div>
-          
-                      <!-- دکمه ذخیره -->
-                      <div class="d-grid">
-                        <button type="submit" class="btn btn-primary btn-lg rounded-pill">
-                          ذخیره محصول
-                        </button>
-                      </div>
-                    </form>
+                      <form>
+                          <!-- اسم محصول -->
+                          <div class="mb-3">
+                              <label for="productName" class="form-label fw-semibold">نام محصول</label>
+                              <input type="text" class="form-control" id="productName" placeholder="نام محصول را وارد کنید" required>
+                          </div>
+
+                          <!-- قیمت محصول -->
+                          <div class="mb-3">
+                              <label for="productPrice" class="form-label fw-semibold">قیمت محصول (تومان)</label>
+                              <input type="number" class="form-control" id="productPrice" placeholder="قیمت محصول را وارد کنید" required>
+                          </div>
+
+                          <!-- آپلود عکس -->
+                          <div class="mb-3">
+                              <label for="productImage" class="form-label fw-semibold">عکس محصول</label>
+                              <input class="form-control" type="file" id="productImage" accept="image/*" required>
+                              <div class="text-center mt-3">
+                                  <img id="imagePreview" src="" alt="پیش‌نمایش محصول" class="img-fluid rounded shadow-sm d-none" style="max-height: 200px;">
+                              </div>
+                          </div>
+
+                          <!-- فیلد مخفی برای user_id -->
+                          <input type="hidden" id="userId" value="1"> <!-- مقدار رو بر اساس کاربر لاجین‌شده تنظیم کن -->
+
+                          <!-- دکمه ذخیره -->
+                          <div class="d-grid">
+                              <button type="submit" class="btn btn-primary btn-lg rounded-pill">
+                                  ذخیره محصول
+                              </button>
+                          </div>
+                      </form>
           
                   </div>
                 </div>
