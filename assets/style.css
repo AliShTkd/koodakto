@@ -1435,7 +1435,7 @@ color: red;
      
 /* modaresin end */
 
-<<<<<<< HEAD
+
 /*  start add product page */
 
 .add-product-page {
@@ -1452,7 +1452,7 @@ color: red;
 
 /*  end add product page */
 
-=======
+
 /* weblog khalaghiat kodakan (ilia) */
 .jadid-div-2{
   border: 1px solid #DBDBDB;
@@ -1464,7 +1464,6 @@ color: red;
   border-radius: 40px;
   height: 43rem;
 }
->>>>>>> 7fb4552c0784c520fc8a6b37ccbe0fbca6f0456a
 
 .slide-img-3{
   border-radius: 2rem;
@@ -1475,7 +1474,7 @@ color: red;
   display: flex;
     justify-content: end;
 
-<<<<<<< HEAD
+}
 /*user message page*/
 .user-message-first-container {
   justify-content: space-around;
@@ -1502,6 +1501,5 @@ color: red;
   margin-top: 10px;
 }
 /*user message page end */
-=======
-}
->>>>>>> 0f5748e246c04b60a57e24889c7c0792c522a422
+
+
