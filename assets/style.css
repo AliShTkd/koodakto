@@ -453,6 +453,7 @@ padding: 1rem;
     background: linear-gradient(90deg, #f817ff 0%, #d800ff 100%);
     border-top-right-radius: 40px;
     border-bottom-right-radius: 40px;
+    border-radius: 7rem;
 
     }
     .text-purple {
@@ -1448,9 +1449,28 @@ color: red;
 
 /* modaresin end */
 
+/* weblog khalaghiat kodakan (ilia) */
+.jadid-div-2{
+  border: 1px solid #DBDBDB;
+  border-radius: 40px;
+  height: 43rem;
+}
+.mataleb-div-2{
+  border: 1px solid #DBDBDB;
+  border-radius: 40px;
+  height: 43rem;
+}
 
+.slide-img-3{
+  border-radius: 2rem;
+  height: 22rem;
+}
 
+.left{
+  display: flex;
+    justify-content: end;
 
+<<<<<<< HEAD
 /*user message page*/
 .user-message-first-container {
   justify-content: space-around;
@@ -1477,3 +1497,6 @@ color: red;
   margin-top: 10px;
 }
 /*user message page end */
+=======
+}
+>>>>>>> 0f5748e246c04b60a57e24889c7c0792c522a422

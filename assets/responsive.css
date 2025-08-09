@@ -13,13 +13,12 @@
     }
 }
 
-/* <<<<<<< HEAD */
 
 
 
 
 
-@media only screen and (max-width: 1024px){
+@media only screen and (max-width: 1200px){
     .jadid-div{
         height: 80rem;
     }
@@ -49,10 +48,16 @@
         height: 10rem;
           width: 15rem !important;
        }
+      
+       .jadid-div-2{
+        height: 64rem !important;
+       }
+
        #cmInput {
         width: 60rem;
         height: 30vh;
     }
+
 }
 
 @media only screen and (max-width: 500px){
@@ -61,14 +66,22 @@
         margin-top: 4rem !important;
     }
     .mataleb-div{
-        height: 50rem;
+        height: 54rem;
     }
+
+    .mataleb-div-2{
+        height: 48rem !important;
+    }
+    .jadid-div-2{
+        height: 39rem !important;
+       }
     #cmInput {
         width: 46rem;
     }
+
 }
 
-/* ======= */
+
 @media only screen and (max-width: 600px){
       .product-box{
         gap:2rem;
@@ -78,4 +91,4 @@
         display: none;
      }
 }
-/* >>>>>>> 783cfa7d09b59df0e58b1bd128888090581b9f2a */
+
