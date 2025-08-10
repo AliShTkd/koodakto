@@ -506,6 +506,70 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 
+//تابع فراخوانی پیش نمایش پزشکان
+// doctors.js
+document.addEventListener('DOMContentLoaded', async () => {
+  try {
+    const container = document.getElementById('doctors-list'); // از id یکتا استفاده کن
+    if (!container) {
+      console.warn('doctors-list not found in DOM — add <div id="doctors-list" class="product-product"> in HTML');
+      return;
+    }
+
+    // پاک‌سازی محتوا
+    container.innerHTML = '';
+
+    const response = await fetch('http://localhost:8000/api/doctors?per_page=20&sort_by=&sort_type=', {
+      method: 'GET',
+      headers: {
+        'Authorization': 'Bearer ' + localStorage.getItem('token'),
+        'Accept': 'application/json'
+      }
+    });
+
+    if (!response.ok) throw new Error('خطا در دریافت اطلاعات پزشکان: ' + response.status);
+
+    const data = await response.json();
+    const doctors = data?.result?.data ?? [];
+
+    if (!doctors.length) {
+      container.innerHTML = '<p class="text-center">پزشکی برای نمایش وجود ندارد</p>';
+      return;
+    }
+
+    const row = document.createElement('div');
+    row.className = 'row box-doctor';
+    container.appendChild(row);
+
+    doctors.forEach(doctor => {
+      const fullName = `${doctor.user?.fname ?? ''} ${doctor.user?.lname ?? ''}`.trim() || 'نامشخص';
+      const specialty = doctor.specialty ?? 'تخصص مشخص نیست';
+      const rate = doctor.avg_rating ?? '0';
+      const avatar = doctor.user?.avatar ?? './assets/photos/user.svg';
+
+      const card = document.createElement('div');
+      card.className = 'doctor-names col-6 col-md-3 mb-4';
+      card.innerHTML = `
+        <div class="doctor-name d-flex">
+          <div class="d-flex">
+            <div class="doctor-icon"><img src="${avatar}" alt=""></div>
+            <div class="doctor-details">
+              <a href="doctor.html?id=${doctor.id}"><p class="name">${fullName}</p></a> 
+              <p class="skill">${specialty}</p>
+            </div>
+          </div>
+          <div class="doctor-point">
+            <span>${rate}<img src="./assets/photos/Star 5.svg" alt=""></span>
+          </div>
+        </div>
+      `;
+      row.appendChild(card);
+    });
+
+  } catch (error) {
+    console.error('خطا:', error);
+  }
+});
 
 
 
