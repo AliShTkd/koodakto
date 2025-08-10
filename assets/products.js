@@ -123,7 +123,7 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 
-<<<<<<< HEAD
+
 
 
 
@@ -138,10 +138,8 @@ document.addEventListener('DOMContentLoaded', () => {
   // });
 
 
-=======
-<<<<<<< HEAD
-// helloo
-=======
+
+
 //علی 
 // document.addEventListener('DOMContentLoaded', async () => {
 //   const container = document.querySelector('.products-page');
@@ -223,5 +221,3 @@ document.addEventListener('DOMContentLoaded', () => {
 //     container.innerHTML = '<p>خطا در بارگذاری محصولات.</p>';
 //   }
 // });
->>>>>>> fe24d49490703427632816ea9301b20ac8f2a72b
->>>>>>> 3f135a1837d1e59276bee286599995508057d3de

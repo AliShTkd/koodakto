@@ -305,7 +305,7 @@ document.addEventListener("DOMContentLoaded",function(){
 
 
 
-<<<<<<< HEAD
+
 // تابع بارگذاری لیست کاربران
 function loadUserList() {
   fetch('http://localhost:8000/api/users', {
@@ -505,10 +505,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 
-
-
-=======
->>>>>>> 3f135a1837d1e59276bee286599995508057d3de
 
 
 
