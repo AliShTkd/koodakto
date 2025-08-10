@@ -105,3 +105,18 @@ document.addEventListener('DOMContentLoaded', async () => {
   }
 });
 
+
+
+
+
+  // document.addEventListener("DOMContentLoaded", () => {
+  //   document.querySelectorAll('.faq-item').forEach(item => {
+  //     item.addEventListener('click', () => {
+  //       const answer = item.querySelector('.faq-answer');
+  //       if (!answer) return;
+  //       answer.classList.toggle('active');
+  //     });
+  //   });
+  // });
+
+
