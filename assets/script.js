@@ -1,3 +1,4 @@
+  // اسلایدر
   document.addEventListener("DOMContentLoaded" , function(){
     
   const track = document.querySelector(".slider-track");
@@ -71,9 +72,7 @@ prevBtn.addEventListener("click", function () {
 
   });
   
-
-
-
+// اسلایدر
 document.addEventListener("DOMContentLoaded" , function(){
 
 let products = document.querySelector(".products");
@@ -110,7 +109,8 @@ prevsBtn.addEventListener("click", function () {
 
 
 });
-// ولیدیشن صفحه لاگین
+
+// ولیدیشن صفحه ورود
 
 document.addEventListener("DOMContentLoaded" , function(){
   let nameInput = document.getElementById("nameInput")
@@ -180,6 +180,8 @@ document.addEventListener("DOMContentLoaded" , function(){
   })
 
 });
+
+// ولیدیشن صفحه ثبت نام
 
 document.addEventListener("DOMContentLoaded",function(){
   let signNameInput = document.getElementById("signNameInput")
@@ -303,6 +305,7 @@ document.addEventListener("DOMContentLoaded",function(){
 
 
 
+<<<<<<< HEAD
 // تابع بارگذاری لیست کاربران
 function loadUserList() {
   fetch('http://localhost:8000/api/users', {
@@ -504,6 +507,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 
+=======
+>>>>>>> 3f135a1837d1e59276bee286599995508057d3de
 
 
 
