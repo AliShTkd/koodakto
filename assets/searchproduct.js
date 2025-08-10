@@ -1,6 +1,6 @@
 // آدرس API شما
 const API_BASE_URL = 'http://localhost:8000/api/products';
-const PER_PAGE = 20; // مقدار مورد نظر شما
+const PER_PAGE = 20; 
 
 // انتخاب المنت‌های مورد نیاز از DOM
 const searchInput = document.querySelector('.input-1');
@@ -12,7 +12,7 @@ let allProducts = [];
 let currentPaginationLinks = [];
 let currentURL = `${API_BASE_URL}?per_page=${PER_PAGE}`;
 
-// تابع برای ساخت و نمایش المنت محصول (بدون تغییر)
+// تابع برای ساخت و نمایش المنت محصول (با تغییر نمایش قیمت)
 function createProductElement(product) {
     const productElement = document.createElement('div');
     productElement.className = 'product-1-page col-12 col-sm-6 col-md-4 col-lg-3 bg-white mb-4';
@@ -23,9 +23,12 @@ function createProductElement(product) {
 
     const description = product.description ?? 'بدون توضیحات';
     const rating = product.stars ?? '4.5';
+    // --- بخش تغییر یافته: محاسبه قیمت نهایی برای نمایش
     const price = Number(product.price).toLocaleString('fa-IR');
-    const discountPrice = product.off ? (Number(product.price) - Number(product.off)).toLocaleString('fa-IR') : (Number(product.price)).toLocaleString('fa-IR');
+    const finalPrice = product.off ? (Number(product.price) - Number(product.off)).toLocaleString('fa-IR') : price;
+    // --- پایان بخش تغییر یافته ---
     
+    // --- بخش تغییر یافته: HTML جدید
     productElement.innerHTML = `
         <div class="p-3">
             <a href="productPage.html?id=${product.id}">
@@ -46,19 +49,17 @@ function createProductElement(product) {
                 </div>
                 <div class="left-sale text-start">
                     <span class="price-toman">تومان</span>
-                    <span class="price-takhfif">${discountPrice}</span>
-                    <div>
-                        <span class="price">${price}</span>
-                    </div>
+                    <span class="price-takhfif">${finalPrice}</span>
                 </div>
             </div>
         </div>
     `;
+    // --- پایان بخش تغییر یافته ---
 
     return productElement;
 }
 
-// تابع برای نمایش محصولات در صفحه (بدون تغییر)
+// تابع برای نمایش محصولات در صفحه
 function renderProducts(products) {
     productsContainer.innerHTML = ''; 
 
@@ -72,7 +73,7 @@ function renderProducts(products) {
     }
 }
 
-// تابع برای نمایش دکمه‌های صفحه‌بندی (تغییر یافته)
+// تابع برای نمایش دکمه‌های صفحه‌بندی
 function renderPagination(links) {
     if (!paginationContainer || !links) {
         return;
@@ -103,17 +104,11 @@ function renderPagination(links) {
             a.addEventListener('click', (e) => {
                 e.preventDefault();
                 
-                // --- بخش تغییر یافته ---
-                // URL فعلی را دریافت کنید.
                 const newUrl = new URL(link.url);
-                
-                // پارامتر per_page را به آن اضافه یا جایگزین کنید.
                 newUrl.searchParams.set('per_page', PER_PAGE);
 
-                // URL جدید را برای فراخوانی API استفاده کنید.
                 currentURL = newUrl.toString();
                 fetchProducts(currentURL);
-                // --- پایان بخش تغییر یافته ---
             });
         }
 
@@ -125,7 +120,7 @@ function renderPagination(links) {
 }
 
 
-// تابع برای فیلتر کردن محصولات (بدون تغییر)
+// تابع برای فیلتر کردن محصولات
 function filterProducts() {
     const searchTerm = searchInput.value.trim();
 
@@ -149,7 +144,7 @@ function filterProducts() {
 }
 
 
-// تابع برای دریافت محصولات از API (بدون تغییر)
+// تابع برای دریافت محصولات از API
 async function fetchProducts(url = currentURL) {
     try {
         const token = localStorage.getItem('token');
