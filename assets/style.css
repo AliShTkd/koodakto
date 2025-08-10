@@ -481,14 +481,13 @@ background-color: #c058fc;
   /* end section children games */
 
   /*  start section questions  */
-  .questoins{
+  /* .questoins{
     margin-top: 7rem;
   }
     .bg-pink {
     background: linear-gradient(90deg, #f817ff 0%, #d800ff 100%);
     border-top-right-radius: 40px;
     border-bottom-right-radius: 40px;
-    border-radius: 7rem;
 
     }
     .text-purple {
@@ -505,6 +504,39 @@ background-color: #c058fc;
     .faq-item:hover {
       background-color: #fdf4ff;
     }
+    .bg-pink{
+      border-radius: 6rem;
+    } */
+
+    .questoins {
+      margin-top: 7rem;
+    }
+    .bg-pink {
+      background: linear-gradient(90deg, #f817ff 0%, #d800ff 100%);
+      border-top-right-radius: 40px;
+      border-bottom-right-radius: 40px;
+      border-radius: 7rem;
+    }
+    .text-purple {
+      color: #d800ff;
+    }
+    .faq-item {
+      background-color: #fff;
+      border: 1px solid #d800ff !important;
+      color: #333;
+      font-size: 1.6rem;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+    .faq-item:hover {
+      background-color: #fdf4ff;
+    }
+    .faq-answer {
+      font-size: 1.4rem;
+      color: #555;
+      margin-top: 0.5rem;
+    }
+    
     /*  end section questions  */
 
     /* start section best-seller */
@@ -1507,7 +1539,7 @@ color: red;
 
 .left{
   display: flex;
-    justify-content: end;
+  justify-content: end;
 
 }
 /*user message page*/

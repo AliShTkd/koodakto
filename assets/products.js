@@ -124,6 +124,22 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 <<<<<<< HEAD
+
+
+
+  // document.addEventListener("DOMContentLoaded", () => {
+  //   document.querySelectorAll('.faq-item').forEach(item => {
+  //     item.addEventListener('click', () => {
+  //       const answer = item.querySelector('.faq-answer');
+  //       if (!answer) return;
+  //       answer.classList.toggle('active');
+  //     });
+  //   });
+  // });
+
+
+=======
+<<<<<<< HEAD
 // helloo
 =======
 //علی 
@@ -208,3 +224,4 @@ document.addEventListener('DOMContentLoaded', () => {
 //   }
 // });
 >>>>>>> fe24d49490703427632816ea9301b20ac8f2a72b
+>>>>>>> 3f135a1837d1e59276bee286599995508057d3de
