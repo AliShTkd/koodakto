@@ -45,16 +45,21 @@
                     <img src="./assets/photos/shopping basket 02.svg" alt="">
                     <a href="basket.html">سبد خرید</a>
               </li>
-               <li class="nav-li d-flex align-items-center">
+               <li class="nav-li d-flex align-items-center dropdown">
                     <img src="./assets/photos/shopping basket 02.svg" alt="">
-                    <a href="usermanager.html">مدیریت کاربران</a>
+                    <a class="dropbtn" href="usermanager.html">مدیریت ها</a>
+                    <ul class="dropdown-content">
+                        <li class="dropdown-content-li"><a href="usermanager.html">مدیریت کاربران</a></li>
+                        <li class="dropdown-content-li"><a href="addProduct.html">مدیریت محصولات</a></li>
+                        <li class="dropdown-content-li"><a href="user-message.html">مدیریت پیام ها</a></li>
+                    </ul>
               </li>
             </ul>
           </div>
       
 
           <div class=" d-lg-block  d-none col-6 col-lg-2 text-start">
-            <button>ثبت نام / ورود</button>
+            <a href="login.html"><button class="new-btn-sign-log">ثبت نام / ورود</button></a>
             <!-- <input class="input-1" type="text" placeholder="محصول مورد نظر را جست و جو کنید"> -->
             <a href="login.html"><img class="combo-icon" src="./assets/photos/Combo shape.svg" alt=""></a>
           </div>
@@ -88,6 +93,9 @@
               <img src="./assets/photos/shopping basket 02.svg" alt="">
               <a href="">محصولات</a>
             </li>
+             <li class="dropdown-content-li"><a href="usermanager.html">مدیریت کاربران</a></li>
+                        <li class="dropdown-content-li"><a href="addProduct.html">مدیریت محصولات</a></li>
+                        <li class="dropdown-content-li"><a href="user-message.html">مدیریت پیام ها</a></li>
             <li class="d-flex align-items-center justify-content-center">
               <a href="login.html"><img class="combo-icon" src="./assets/photos/Combo shape.svg" alt=""></a>
           </li>
@@ -931,7 +939,7 @@
         </footer>
          <!-- end footer -->
     </div>
-
+    <script src="./assets/dropdown.js"></script>
     <script src="./assets/script.js"></script>
     <script src="./assets/searchDoctor.js"></script>
 </body>
