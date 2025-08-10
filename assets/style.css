@@ -74,19 +74,21 @@ position: relative;
 position: absolute;
 top: 110%;
 z-index: 2;
-width: 180px;
-background-color: #ce7bff;
+width: 18rem;
+padding: 11px;
+text-align: center;
+background-color:white;
 border-radius: 10px;
 color: white !important;
 display: none;
 }
 .dropdown-content-li a{
-  color: white !important;
+  color: rgb(66, 66, 66) !important;
   transition: all 0.3s ease;
 }
 .dropdown-content-li a:hover{
   transform: scale(1.05);
-  color: #00189F !important;
+  color: #8226B6 !important;
 }
 .dropdown.active .dropdown-content {
   display: block;
