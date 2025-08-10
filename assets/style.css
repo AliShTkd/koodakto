@@ -67,6 +67,41 @@ padding: 1rem;
 .khaaneh{
   color: #AC3DEB !important;
 }
+.dropdown{
+position: relative;
+}
+.dropdown-content{
+position: absolute;
+top: 110%;
+z-index: 2;
+width: 180px;
+background-color: #ce7bff;
+border-radius: 10px;
+color: white !important;
+display: none;
+}
+.dropdown-content-li a{
+  color: white !important;
+  transition: all 0.3s ease;
+}
+.dropdown-content-li a:hover{
+  transform: scale(1.05);
+  color: #00189F !important;
+}
+.dropdown.active .dropdown-content {
+  display: block;
+}
+.new-btn-sign-log{
+  font-size: 15px;
+  border-radius: 10px;
+  padding: 5px;
+  border: none;
+  background-color: #8226B6;
+  color: white;
+}
+.new-btn-sign-log:hover{
+background-color: #c058fc;
+}
 /* end header */
 
 /* start main */
@@ -446,14 +481,13 @@ padding: 1rem;
   /* end section children games */
 
   /*  start section questions  */
-  .questoins{
+  /* .questoins{
     margin-top: 7rem;
   }
     .bg-pink {
     background: linear-gradient(90deg, #f817ff 0%, #d800ff 100%);
     border-top-right-radius: 40px;
     border-bottom-right-radius: 40px;
-    border-radius: 7rem;
 
     }
     .text-purple {
@@ -470,6 +504,39 @@ padding: 1rem;
     .faq-item:hover {
       background-color: #fdf4ff;
     }
+    .bg-pink{
+      border-radius: 6rem;
+    } */
+
+    .questoins {
+      margin-top: 7rem;
+    }
+    .bg-pink {
+      background: linear-gradient(90deg, #f817ff 0%, #d800ff 100%);
+      border-top-right-radius: 40px;
+      border-bottom-right-radius: 40px;
+      border-radius: 7rem;
+    }
+    .text-purple {
+      color: #d800ff;
+    }
+    .faq-item {
+      background-color: #fff;
+      border: 1px solid #d800ff !important;
+      color: #333;
+      font-size: 1.6rem;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+    .faq-item:hover {
+      background-color: #fdf4ff;
+    }
+    .faq-answer {
+      font-size: 1.4rem;
+      color: #555;
+      margin-top: 0.5rem;
+    }
+    
     /*  end section questions  */
 
     /* start section best-seller */
@@ -1476,7 +1543,7 @@ color: red;
 
 .left{
   display: flex;
-    justify-content: end;
+  justify-content: end;
 
 }
 /*user message page*/

@@ -306,6 +306,270 @@ document.addEventListener("DOMContentLoaded",function(){
 
 
 
+// تابع بارگذاری لیست کاربران
+function loadUserList() {
+  fetch('http://localhost:8000/api/users', {
+    method: 'GET',
+    headers: {
+      'Authorization': 'Bearer ' + localStorage.getItem('token')
+    }
+  })
+    .then(response => {
+      if (!response.ok) {
+        throw new Error('خطا در دریافت داده‌ها: ' + response.status);
+      }
+      return response.json();
+    })
+    .then(data => {
+      const userList = document.getElementById('userList');
+      userList.innerHTML = ''; // پاک کردن محتوای قبلی
+
+      if (Array.isArray(data.result.data)) {
+        data.result.data.forEach(user => {
+          const row = document.createElement('tr');
+          row.innerHTML = `
+            <td>${user.id || 'N/A'}</td>
+            <td>${user.fname+" "+ user.lname || 'N/A'}</td>
+            <td>${user.email || 'N/A'}</td>
+            <td>${user.group.name || 'بدون گروه'}</td>
+          `;
+          userList.appendChild(row);
+        });
+      } else {
+        console.error('داده‌ها آرایه نیستند:', data);
+      }
+    })
+    .catch(error => console.error('خطا:', error));
+}
+
+// فراخوانی در بارگذاری اولیه صفحه
+document.addEventListener('DOMContentLoaded', () => {
+  loadUserList();
+});
+
+
+
+
+
+// selectlist ایمیل و نام کاربران
+document.addEventListener('DOMContentLoaded', () => {
+  fetch('http://localhost:8000/api/users/all', {
+    method: 'GET',
+    headers: {
+      'Authorization': 'Bearer ' + localStorage.getItem('token')
+    }
+  })
+    .then(response => {
+      if (!response.ok) {
+        throw new Error('خطا در دریافت داده‌ها: ' + response.status);
+      }
+      return response.json();
+    })
+    .then(response => {
+      const usernSelect = document.getElementById('usern');
+      usernSelect.innerHTML = '<option value="" disabled selected>انتخاب ایمیل</option>';
+
+      response.result.forEach(usern => {
+        const option = document.createElement('option');
+        option.value = usern.id;
+        option.textContent = `${usern.email} . ${usern.fname}`;
+        usernSelect.appendChild(option);
+      });
+
+      // ✅ فعال‌سازی Selectize بعد از پر شدن
+      $('#usern').selectize({
+        create: false,
+        sortField: 'text',
+        placeholder: 'انتخاب ایمیل کاربر',
+        dropdownParent: 'body'
+      });
+
+    })
+    .catch(error => console.error('خطا در دریافت نام کاربری:', error));
+});
+
+
+// selectlist نقش ها
+document.addEventListener('DOMContentLoaded', () => {
+  fetch('http://localhost:8000/api/users/groups/all', {
+    method: 'GET',
+    headers: {
+      'Authorization': 'Bearer ' + localStorage.getItem('token') // توکن رو جایگزین کن
+    }
+  })
+  .then(response => {
+    if (!response.ok) {
+      throw new Error('خطا در دریافت داده‌ها: ' + response.status);
+    }
+    return response.json();
+  })
+  .then(response => {
+    const roleSelect = document.getElementById('role');
+    roleSelect.innerHTML = '<option value="" disabled selected>انتخاب نقش</option>';
+    
+    response.result.forEach(role => {
+      const option = document.createElement('option');
+      option.value = role.id;
+      option.textContent = role.name;
+      roleSelect.appendChild(option);
+    });
+
+    // فعال‌سازی Selectize روی لیست نقش‌ها
+    $('#role').selectize({
+      create: false,
+      sortField: 'text',
+      placeholder: 'انتخاب نقش کاربر',
+      dropdownParent: 'body'
+    });
+  })
+  .catch(error => console.error('خطا در دریافت نقش‌ها:', error));
+});
+
+
+
+//کلید ویرایش کاربر
+document.getElementById('addUserForm').addEventListener('submit', function (e) {
+  e.preventDefault(); // جلوگیری از ارسال پیش‌فرض فرم
+
+  const userId = document.getElementById('usern').value;
+  const groupId = document.getElementById('role').value;
+  const selectedEmail = document.getElementById('usern').selectedOptions[0].text.split(' . ')[0];
+
+  // مرحله اول: گرفتن اطلاعات کامل کاربر
+  fetch(`http://localhost:8000/api/users/${userId}`, {
+    method: 'GET',
+    headers: {
+      'Authorization': 'Bearer ' + localStorage.getItem('token'),
+      'Content-Type': 'application/json'
+    }
+  })
+    .then(response => {
+      if (!response.ok) {
+        throw new Error('خطا در دریافت اطلاعات کاربر: ' + response.status);
+      }
+      return response.json();
+    })
+    .then(userData => {
+      const existingUser = userData.result;
+
+      // مرحله دوم: ارسال اطلاعات کامل برای ویرایش
+      return fetch(`http://localhost:8000/api/users/${userId}`, {
+        method: 'PUT',
+        headers: {
+          'Authorization': 'Bearer ' + localStorage.getItem('token'),
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          email: selectedEmail,
+          group_id: groupId,
+          fname: existingUser.fname || "",
+          lname: existingUser.lname || "",
+          phone: existingUser.phone || ""
+        })
+      });
+    })
+    .then(response => {
+      if (!response.ok) {
+        throw new Error('خطا در ویرایش کاربر: ' + response.status);
+      }
+      return response.json();
+    })
+    .then(data => {
+      console.log('کاربر با موفقیت ویرایش شد:', data);
+      alert("✅ کاربر با موفقیت ویرایش شد");
+      location.reload();// ریلود صفحه
+
+      // بروزرسانی لیست کاربران
+      updateUserList();
+    })
+   
+});
+
+
+document.addEventListener("DOMContentLoaded", () => {
+  document.querySelectorAll('.faq-item').forEach(item => {
+    item.addEventListener('click', () => {
+      const answer = item.querySelector('.faq-answer');
+      if (!answer) return;
+
+      // اگر الان نمایش داشت، مخفی کن، وگرنه نمایش بده
+      if (answer.style.display === 'block') {
+        answer.style.display = 'none';
+      } else {
+        answer.style.display = 'block';
+      }
+    });
+  });
+});
+
+
+
+
+
+//تابع فراخوانی پیش نمایش پزشکان
+// doctors.js
+document.addEventListener('DOMContentLoaded', async () => {
+  try {
+    const container = document.getElementById('doctors-list'); // از id یکتا استفاده کن
+    if (!container) {
+      console.warn('doctors-list not found in DOM — add <div id="doctors-list" class="product-product"> in HTML');
+      return;
+    }
+
+    // پاک‌سازی محتوا
+    container.innerHTML = '';
+
+    const response = await fetch('http://localhost:8000/api/doctors?per_page=20&sort_by=&sort_type=', {
+      method: 'GET',
+      headers: {
+        'Authorization': 'Bearer ' + localStorage.getItem('token'),
+        'Accept': 'application/json'
+      }
+    });
+
+    if (!response.ok) throw new Error('خطا در دریافت اطلاعات پزشکان: ' + response.status);
+
+    const data = await response.json();
+    const doctors = data?.result?.data ?? [];
+
+    if (!doctors.length) {
+      container.innerHTML = '<p class="text-center">پزشکی برای نمایش وجود ندارد</p>';
+      return;
+    }
+
+    const row = document.createElement('div');
+    row.className = 'row box-doctor';
+    container.appendChild(row);
+
+    doctors.forEach(doctor => {
+      const fullName = `${doctor.user?.fname ?? ''} ${doctor.user?.lname ?? ''}`.trim() || 'نامشخص';
+      const specialty = doctor.specialty ?? 'تخصص مشخص نیست';
+      const rate = doctor.avg_rating ?? '0';
+      const avatar = doctor.user?.avatar ?? './assets/photos/user.svg';
+
+      const card = document.createElement('div');
+      card.className = 'doctor-names col-6 col-md-3 mb-4';
+      card.innerHTML = `
+        <div class="doctor-name d-flex">
+          <div class="d-flex">
+            <div class="doctor-icon"><img src="${avatar}" alt=""></div>
+            <div class="doctor-details">
+              <a href="doctor.html?id=${doctor.id}"><p class="name">${fullName}</p></a> 
+              <p class="skill">${specialty}</p>
+            </div>
+          </div>
+          <div class="doctor-point">
+            <span>${rate}<img src="./assets/photos/Star 5.svg" alt=""></span>
+          </div>
+        </div>
+      `;
+      row.appendChild(card);
+    });
+
+  } catch (error) {
+    console.error('خطا:', error);
+  }
+});
 
 
 

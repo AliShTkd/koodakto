@@ -45,16 +45,21 @@
                     <img src="./assets/photos/shopping basket 02.svg" alt="">
                     <a href="basket.html">سبد خرید</a>
               </li>
-               <li class="nav-li d-flex align-items-center">
+               <li class="nav-li d-flex align-items-center dropdown">
                     <img src="./assets/photos/shopping basket 02.svg" alt="">
-                    <a href="usermanager.html">مدیریت کاربران</a>
+                    <a class="dropbtn" href="usermanager.html">مدیریت ها</a>
+                    <ul class="dropdown-content">
+                        <li class="dropdown-content-li"><a href="usermanager.html">مدیریت کاربران</a></li>
+                        <li class="dropdown-content-li"><a href="addProduct.html">مدیریت محصولات</a></li>
+                        <li class="dropdown-content-li"><a href="user-message.html">مدیریت پیام ها</a></li>
+                    </ul>
               </li>
             </ul>
           </div>
       
 
           <div class=" d-lg-block  d-none col-6 col-lg-2 text-start">
-            <button>ثبت نام / ورود</button>
+            <a href="login.html"><button class="new-btn-sign-log">ثبت نام / ورود</button></a>
             <!-- <input class="input-1" type="text" placeholder="محصول مورد نظر را جست و جو کنید"> -->
             <a href="login.html"><img class="combo-icon" src="./assets/photos/Combo shape.svg" alt=""></a>
           </div>
@@ -88,6 +93,9 @@
               <img src="./assets/photos/shopping basket 02.svg" alt="">
               <a href="">محصولات</a>
             </li>
+             <li class="dropdown-content-li"><a href="usermanager.html">مدیریت کاربران</a></li>
+                        <li class="dropdown-content-li"><a href="addProduct.html">مدیریت محصولات</a></li>
+                        <li class="dropdown-content-li"><a href="user-message.html">مدیریت پیام ها</a></li>
             <li class="d-flex align-items-center justify-content-center">
               <a href="login.html"><img class="combo-icon" src="./assets/photos/Combo shape.svg" alt=""></a>
           </li>
@@ -202,7 +210,9 @@
             <div class="container detail-box">
               <div class="search row align-items-center">
                 <div class="right col-lg-4 d-flex">
-                  <h3> پزشکان</h3>        <!--right search section logo-->
+
+                  <h5> پزشکان</h5>        <!--right search section logo-->
+
                   <img src="./assets/photos/Star 6.svg" alt="">
                 </div>
           
@@ -224,259 +234,48 @@
                 </div>
               </div>
         <!-- doctor name div -->
-             <div class="mt-5">
-                <div class="row box-doctor">
-                <div class="doctor-names col-6 col-md-3 mb-4"><!--doctor name box-->
-                    <div class="doctor-name d-flex">
-                        <div class="d-flex">
-                        <div class="doctor-icon"><img src="./assets/photos/user.svg" alt=""></div>
-                        <div class="doctor-details">
-                           <a href="doctor.html"><p class="name">محمد حسین شاکری</p></a> 
-                            <p class="skill">متخصص کودکان</p>
-                        </div>
-                        </div>
-                        <div class="doctor-point">
-                            <span>4.5<img src="./assets/photos/Star 5.svg" alt=""></span>
-                        </div>
-                    </div>
-                </div>
 
-                <div class="doctor-names col-6 col-md-3 mb-4"><!--doctor name box-->
-                    <div class="doctor-name d-flex">
-                        <div class="d-flex">
-                        <div class="doctor-icon"><img src="./assets/photos/user.svg" alt=""></div>
-                        <div class="doctor-details">
+          <!-- <div class="mt-5">
+                    <div class="row box-doctor">
+                    <div class="doctor-names col-6 col-md-3 mb-4">
+                        <div class="doctor-name d-flex">
+                            <div class="d-flex">
+                            <div class="doctor-icon"><img src="./assets/photos/user.svg" alt=""></div>
+                            <div class="doctor-details">
                             <a href="doctor.html"><p class="name">محمد حسین شاکری</p></a> 
-                            <p class="skill">متخصص کودکان</p>
-                        </div>
-                        </div>
-                        <div class="doctor-point">
-                            <span>4.5<img src="./assets/photos/Star 5.svg" alt=""></span>
+                                <p class="skill">متخصص کودکان</p>
+                            </div>
+                            </div>
+                            <div class="doctor-point">
+                                <span>4.5<img src="./assets/photos/Star 5.svg" alt=""></span>
+                            </div>
                         </div>
                     </div>
-                </div>
-
-                <div class="doctor-names col-6 col-md-3 mb-4"><!--doctor name box-->
-                    <div class="doctor-name d-flex">
-                        <div class="d-flex">
-                        <div class="doctor-icon"><img src="./assets/photos/user.svg" alt=""></div>
-                        <div class="doctor-details">
-                            <a href="doctor.html"><p class="name">محمد حسین شاکری</p></a> 
-                            <p class="skill">متخصص کودکان</p>
-                        </div>
-                        </div>
-                        <div class="doctor-point">
-                            <span>4.5<img src="./assets/photos/Star 5.svg" alt=""></span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="doctor-names col-6 col-md-3 mb-4"><!--doctor name box-->
-                    <div class="doctor-name d-flex">
-                        <div class="d-flex">
-                        <div class="doctor-icon"><img src="./assets/photos/user.svg" alt=""></div>
-                        <div class="doctor-details">
-                            <a href="doctor.html"><p class="name">محمد حسین شاکری</p></a> 
-                            <p class="skill">متخصص کودکان</p>
-                        </div>
-                        </div>
-                        <div class="doctor-point">
-                            <span>4.5<img src="./assets/photos/Star 5.svg" alt=""></span>
-                        </div>
-                    </div>
-                </div>
 
             </div>
+          </div>  -->
 
-            <div class="row box-doctor">
-                <div class="doctor-names col-6 col-md-3 mb-4"><!--doctor name box-->
-                    <div class="doctor-name d-flex">
-                        <div class="d-flex">
-                        <div class="doctor-icon"><img src="./assets/photos/user.svg" alt=""></div>
-                        <div class="doctor-details">
-                            <a href="doctor.html"><p class="name">محمد حسین شاکری</p></a> 
-                            <p class="skill">متخصص کودکان</p>
-                        </div>
-                        </div>
-                        <div class="doctor-point">
-                            <span>4.5<img src="./assets/photos/Star 5.svg" alt=""></span>
-                        </div>
-                    </div>
-                </div>
+<!-- container مخصوص دکترها: id یکتا تا تداخلی پیش نیاد -->
+<div id="doctors-list" class="mt-5 product-product">
+  <div class="row box-doctor" id="doctors-row"></div>
+</div>
 
-                <div class="doctor-names col-6 col-md-3 mb-4 "><!--doctor name box-->
-                    <div class="doctor-name d-flex">
-                        <div class="d-flex">
-                        <div class="doctor-icon"><img src="./assets/photos/user.svg" alt=""></div>
-                        <div class="doctor-details">
-                            <a href="doctor.html"><p class="name">محمد حسین شاکری</p></a> 
-                            <p class="skill">متخصص کودکان</p>
-                        </div>
-                        </div>
-                        <div class="doctor-point">
-                            <span>4.5<img src="./assets/photos/Star 5.svg" alt=""></span>
-                        </div>
-                    </div>
-                </div>
 
-                <div class="doctor-names col-6 col-md-3 mb-4"><!--doctor name box-->
-                    <div class="doctor-name d-flex">
-                        <div class="d-flex">
-                        <div class="doctor-icon"><img src="./assets/photos/user.svg" alt=""></div>
-                        <div class="doctor-details">
-                            <a href="doctor.html"><p class="name">محمد حسین شاکری</p></a> 
-                            <p class="skill">متخصص کودکان</p>
-                        </div>
-                        </div>
-                        <div class="doctor-point">
-                            <span>4.5<img src="./assets/photos/Star 5.svg" alt=""></span>
-                        </div>
-                    </div>
-                </div>
+          <!-- <div class="mt-5">
+            <div class="product-product"> </div>
+          </div> -->
 
-                <div class="doctor-names col-6 col-md-3 mb-4"><!--doctor name box-->
-                    <div class="doctor-name d-flex">
-                        <div class="d-flex">
-                        <div class="doctor-icon"><img src="./assets/photos/user.svg" alt=""></div>
-                        <div class="doctor-details">
-                            <a href="doctor.html"><p class="name">محمد حسین شاکری</p></a> 
-                            <p class="skill">متخصص کودکان</p>
-                        </div>
-                        </div>
-                        <div class="doctor-point">
-                            <span>4.5<img src="./assets/photos/Star 5.svg" alt=""></span>
-                        </div>
-                    </div>
-                </div>
-
+          <!-- <div class="mt-5">
+            <h3 class="mb-4">پزشکان برتر</h3> -->
+            <!-- این container همونیه که کد JS پیدا می‌کنه -->
+            <!-- <div class="product-product row box-doctor"> -->
+              <!-- جاوااسکریپت کارت‌ها رو اینجا می‌سازه -->
+            <!-- </div>
+            <div class="text-center mt-4">
+              <a href="doctors.html" class="btn btn-primary">مشاهده همه پزشکان</a>
             </div>
-
-            <div class="row box-doctor">
-                <div class="doctor-names col-6 col-md-3 mb-4"><!--doctor name box-->
-                    <div class="doctor-name d-flex">
-                        <div class="d-flex">
-                        <div class="doctor-icon"><img src="./assets/photos/user.svg" alt=""></div>
-                        <div class="doctor-details">
-                            <a href="doctor.html"><p class="name">محمد حسین شاکری</p></a> 
-                            <p class="skill">متخصص کودکان</p>
-                        </div>
-                        </div>
-                        <div class="doctor-point">
-                            <span>4.5<img src="./assets/photos/Star 5.svg" alt=""></span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="doctor-names col-6 col-md-3 mb-4"><!--doctor name box-->
-                    <div class="doctor-name d-flex">
-                        <div class="d-flex">
-                        <div class="doctor-icon"><img src="./assets/photos/user.svg" alt=""></div>
-                        <div class="doctor-details">
-                            <a href="doctor.html"><p class="name">محمد حسین شاکری</p></a> 
-                            <p class="skill">متخصص کودکان</p>
-                        </div>
-                        </div>
-                        <div class="doctor-point">
-                            <span>4.5<img src="./assets/photos/Star 5.svg" alt=""></span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="doctor-names col-6 col-md-3 mb-4"><!--doctor name box-->
-                    <div class="doctor-name d-flex">
-                        <div class="d-flex">
-                        <div class="doctor-icon"><img src="./assets/photos/user.svg" alt=""></div>
-                        <div class="doctor-details">
-                            <a href="doctor.html"><p class="name">محمد حسین شاکری</p></a> 
-                            <p class="skill">متخصص کودکان</p>
-                        </div>
-                        </div>
-                        <div class="doctor-point">
-                            <span>4.5<img src="./assets/photos/Star 5.svg" alt=""></span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="doctor-names col-6 col-md-3 mb-4"><!--doctor name box-->
-                    <div class="doctor-name d-flex">
-                        <div class="d-flex">
-                        <div class="doctor-icon"><img src="./assets/photos/user.svg" alt=""></div>
-                        <div class="doctor-details">
-                            <a href="doctor.html"><p class="name">محمد حسین شاکری</p></a> 
-                            <p class="skill">متخصص کودکان</p>
-                        </div>
-                        </div>
-                        <div class="doctor-point">
-                            <span>4.5<img src="./assets/photos/Star 5.svg" alt=""></span>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-
-            <div class="row box-doctor">
-                <div class="doctor-names col-6 col-md-3 mb-4"><!--doctor name box-->
-                    <div class="doctor-name d-flex">
-                        <div class="d-flex">
-                        <div class="doctor-icon"><img src="./assets/photos/user.svg" alt=""></div>
-                        <div class="doctor-details">
-                            <a href="doctor.html"><p class="name">محمد حسین شاکری</p></a> 
-                            <p class="skill">متخصص کودکان</p>
-                        </div>
-                        </div>
-                        <div class="doctor-point">
-                            <span>4.5<img src="./assets/photos/Star 5.svg" alt=""></span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="doctor-names col-6 col-md-3 mb-4"><!--doctor name box-->
-                    <div class="doctor-name d-flex">
-                        <div class="d-flex">
-                        <div class="doctor-icon"><img src="./assets/photos/user.svg" alt=""></div>
-                        <div class="doctor-details">
-                            <a href="doctor.html"><p class="name">محمد حسین شاکری</p></a> 
-                            <p class="skill">متخصص کودکان</p>
-                        </div>
-                        </div>
-                        <div class="doctor-point">
-                            <span>4.5<img src="./assets/photos/Star 5.svg" alt=""></span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="doctor-names col-6 col-md-3 mb-4"><!--doctor name box-->
-                    <div class="doctor-name d-flex">
-                        <div class="d-flex">
-                        <div class="doctor-icon"><img src="./assets/photos/user.svg" alt=""></div>
-                        <div class="doctor-details">
-                            <a href="doctor.html"><p class="name">محمد حسین شاکری</p></a> 
-                            <p class="skill">متخصص کودکان</p>
-                        </div>
-                        </div>
-                        <div class="doctor-point">
-                            <span>4.5<img src="./assets/photos/Star 5.svg" alt=""></span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="doctor-names col-6 col-md-3 mb-4"><!--doctor name box-->
-                    <div class="doctor-name d-flex">
-                        <div class="d-flex">
-                        <div class="doctor-icon"><img src="./assets/photos/user.svg" alt=""></div>
-                        <div class="doctor-details">
-                            <a href="doctor.html"><p class="name">محمد حسین شاکری</p></a> 
-                            <p class="skill">متخصص کودکان</p>
-                        </div>
-                        </div>
-                        <div class="doctor-point">
-                            <span>4.5<img src="./assets/photos/Star 5.svg" alt=""></span>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-              </div>
+          </div> -->
+          
                <!--  end doctor name div -->
             </div>
           </section>
@@ -681,42 +480,58 @@
           <!-- end section children games -->
 
          <!-- start section questions -->
-        <section class="questoins">
-          <div class="container py-5">
-            <div class="row align-items-center">
-                <div class=" mb-3 d-flex justify-content-center align-items-center">
-                <h3>سوالات <span class="text-purple">متداول</span></h3>
-                <img src="./assets/photos/؟.svg" alt="">
-                 </div>
-    
-              <div class="col-md-7">
-          
-                <div class="faq-item mb-3 p-3 rounded-pill d-flex justify-content-between align-items-center">
-                  <span>آیا این دوره پیش‌نیاز دارد؟</span>
+         <section class="questoins">
+            <div class="container py-5">
+              <div class="row align-items-center">
+                  <div class=" mb-3 d-flex justify-content-center align-items-center">
+                  <h3>سوالات <span class="text-purple">متداول</span></h3>
+                  <img src="./assets/photos/؟.svg" alt="">
+                   </div>
+      
+                   
+                  
+                        <div class="col-md-7">
+                          <div class="faq-item mb-3 p-3 rounded-pill d-flex flex-column align-items-start" style="cursor:pointer;">
+                            <div class="faq-question">آیا این دوره پیش‌نیاز دارد؟</div>
+                            <div class="faq-answer" style="display:none;">
+                              این دوره برای کسانی که آشنایی اولیه با مفاهیم پایه دارند مناسب است و پیش‌نیاز خاصی ندارد.
+                            </div>
+                          </div>
+                  
+                          <div class="faq-item mb-3 p-3 rounded-pill d-flex flex-column align-items-start" style="cursor:pointer;">
+                            <div class="faq-question">چگونه در سایت ثبت نام کنیم؟</div>
+                            <div class="faq-answer" style="display:none;">
+                              برای ثبت نام کافی است وارد صفحه ثبت نام شده و فرم مربوطه را پر کنید.
+                            </div>
+                          </div>
+                  
+                          <div class="faq-item mb-3 p-3 rounded-pill d-flex flex-column align-items-start" style="cursor:pointer;">
+                            <div class="faq-question">آیا امکان لغو یا تغییر سفارش وجود دارد؟</div>
+                            <div class="faq-answer" style="display:none;">
+                              بله، تا قبل از ارسال سفارش می‌توانید آن را لغو یا تغییر دهید.
+                            </div>
+                          </div>
+                  
+                          <div class="faq-item mb-3 p-3 rounded-pill d-flex flex-column align-items-start" style="cursor:pointer;">
+                            <div class="faq-question">چطور می‌توانم سفارش ثبت کنم؟</div>
+                            <div class="faq-answer" style="display:none;">
+                              برای ثبت سفارش ابتدا محصول مورد نظر را انتخاب و سپس مراحل پرداخت را طی کنید.
+                            </div>
+                          </div>
+                        </div>
+                  
+                
+                
+  
+                <div class="col-md-5 text-center">
+                  <div class="bg-pink p-4">
+                      <img src="./assets/photos/school-boy-9373657-7650708.webp" alt="">
+                  </div>
                 </div>
-          
-                <div class="faq-item mb-3 p-3 rounded-pill d-flex justify-content-between align-items-center">
-                  <span>چگونه در سایت ثبت نام کنیم؟</span>
-                </div>
-          
-                <div class="faq-item mb-3 p-3  rounded-pill d-flex justify-content-between align-items-center">
-                  <span>آیا امکان لغو یا تغییر سفارش وجود دارد؟</span>
-                </div>
-          
-                <div class="faq-item mb-3 p-3  rounded-pill d-flex justify-content-between align-items-center">
-                  <span>چطور می‌توانم سفارش ثبت کنم؟</span>
-                </div>
+  
               </div>
-
-              <div class="col-md-5 text-center">
-                <div class="bg-pink p-4">
-                    <img src="./assets/photos/school-boy-9373657-7650708.webp" alt="">
-                </div>
-              </div>
-
             </div>
-          </div>
-        </section>
+          </section>
          <!-- end section questions -->
 
         <!-- start section best-seller -->
@@ -931,8 +746,15 @@
         </footer>
          <!-- end footer -->
     </div>
-
+    <script src="./assets/dropdown.js"></script>
     <script src="./assets/script.js"></script>
+
+    <script src="./section questions.js"></script>
+
     <script src="./assets/searchDoctor.js"></script>
+
+    <script src="./assets/doctors.js"></script>
+    <script src="./index.js"></script>
+
 </body>
 </html>
