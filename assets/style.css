@@ -1578,3 +1578,89 @@ color: red;
 /*user message page end */
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+.user-panel {
+    display: flex;
+    gap: 20px;
+    padding: 20px;
+    direction: rtl;
+}
+
+.panel-right, .panel-left {
+    background-color: #f4e1ff;
+    border-radius: 15px;
+    padding: 20px;
+}
+
+.panel-right {
+    flex: 1;
+}
+
+.panel-left {
+    flex: 1;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.user-info {
+    margin-bottom: 20px;
+}
+
+.user-menu {
+    list-style: none;
+    padding: 0;
+}
+
+.user-menu li {
+    margin: 10px 0;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.user-menu i {
+    color: white;
+    margin-left: 8px;
+}
+
+.stat-card {
+    background-color: #a020f0;
+    color: white;
+    padding: 15px;
+    border-radius: 12px;
+    text-align: center;
+    width: 120px;
+}
+
+.stat-card i {
+    font-size: 24px;
+    margin-bottom: 10px;
+    display: block;
+}
+
+
+.user-menu li{
+  
+    background-color:#a020f0;
+    padding: 10px;
+    border-radius: 20px;
+    color: white;
+}
+.user-menu li:hover{
+  background-color:#c66aff ;
+  color: white;
+}
+
+  
