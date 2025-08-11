@@ -304,39 +304,113 @@ document.addEventListener("DOMContentLoaded",function(){
 
 
 
+// تابع پیش نمایش پزشکان
+// document.addEventListener('DOMContentLoaded', async () => {
+//   // انتخاب المنت جستجو
+//   const searchInput = document.querySelector('.search-input .input-1');
+  
+//   // تابع اصلی برای دریافت و نمایش پزشکان
+//   const fetchAndRenderDoctors = async (searchTerm = '') => {
+//     try {
+//       // ساخت URL درخواست با توجه به عبارت جستجو
+//       const url = `http://localhost:8000/api/doctors?per_page=20&sort_by=&sort_type=&search=${searchTerm}`;
+//       const response = await fetch(url, {
+//         method: 'GET',
+//         headers: {
+//           'Authorization': 'Bearer ' + localStorage.getItem('token'),
+//           'Accept': 'application/json'
+//         }
+//       });
+
+//       if (!response.ok) throw new Error('خطا در دریافت اطلاعات پزشکان: ' + response.status);
+
+//       const data = await response.json();
+//       console.log(data); // برای دیباگ
+
+//       const container = document.querySelector('.box-doctor');
+//       container.innerHTML = ''; // پاک کردن محتوای قبلی
+
+//       const doctors = data.result.data;
+      
+//       if (doctors.length === 0) {
+//         container.innerHTML = '<p class="text-center mt-5">پزشکی با این مشخصات یافت نشد.</p>';
+//         return;
+//       }
+
+//       doctors.forEach(doctor => {
+//         const doctorElement = document.createElement('div');
+//         doctorElement.className = 'doctor-names col-6 col-md-3 mb-4';
+
+//         const fullName = `${doctor.user.fname} ${doctor.user.lname}`;
+//         const specialty = doctor.specialty ?? 'تخصص مشخص نیست';
+//         const rating = '4.5'; 
+
+//         doctorElement.innerHTML = `
+//           <div class="doctor-name d-flex">
+//             <div class="d-flex">
+//               <div class="doctor-icon"><img src="./assets/photos/user.svg" alt=""></div>
+//               <div class="doctor-details">
+//                 <a href="doctor.html?id=${doctor.id}">
+//                   <p class="name">${fullName}</p>
+//                 </a>
+//                 <p class="skill">${specialty}</p>
+//               </div>
+//             </div>
+//             <div class="doctor-point">
+//               <span>${rating}<img src="./assets/photos/Star 5.svg" alt=""></span>
+//             </div>
+//           </div>
+//         `;
+
+//         container.appendChild(doctorElement);
+//       });
+
+//     } catch (error) {
+//       console.error('خطا:', error);
+//     }
+//   };
+
+//   // اضافه کردن event listener به اینپوت جستجو با استفاده از debounce
+//   searchInput.addEventListener('input', (event) => {
+//     clearTimeout(searchInput.debounceTimer);
+//     searchInput.debounceTimer = setTimeout(() => {
+//       const searchTerm = event.target.value;
+//       fetchAndRenderDoctors(searchTerm);
+//     }, 500); // تاخیر 500 میلی‌ثانیه
+//   });
+  
+//   // فراخوانی اولیه تابع برای نمایش پزشکان در بارگذاری صفحه
+//   fetchAndRenderDoctors();
+// });
+
+
 
 document.addEventListener('DOMContentLoaded', async () => {
-  try {
-    const response = await fetch('http://localhost:8000/api/doctors?per_page=8&sort_by=&sort_type=', {
-      method: 'GET',
-      headers: {
-        'Authorization': 'Bearer ' + localStorage.getItem('token'),
-        'Accept': 'application/json'
-      }
-    });
+  // انتخاب المنت جستجو
+  const searchInput = document.querySelector('.search-input .input-1');
+  // انتخاب المنت کانتینر پزشکان
+  const container = document.querySelector('.box-doctor');
 
-    if (!response.ok) throw new Error('خطا در دریافت اطلاعات پزشکان: ' + response.status);
+  // متغیر سراسری برای ذخیره همه پزشکان
+  let allDoctors = [];
 
-    const data = await response.json();
-    console.log(data); // برای دیباگ
+  // تابع برای نمایش پزشکان در صفحه
+  const renderDoctors = (doctors) => {
+    container.innerHTML = ''; // پاک کردن محتوای قبلی
 
-    // انتخاب المنت اصلی که پزشکان در آن نمایش داده می‌شوند
-    const container = document.querySelector('.box-doctor');
-    container.innerHTML = ''; // پاک کردن محتوای نمونه قبلی
+    if (doctors.length === 0) {
+      container.innerHTML = '<p class="text-center mt-5">پزشکی با این مشخصات یافت نشد.</p>';
+      return;
+    }
 
-    const doctors = data.result.data;
-    
-    // حلقه‌ای برای نمایش هر پزشک
     doctors.forEach(doctor => {
       const doctorElement = document.createElement('div');
-      // استفاده از کلاس‌های CSS موجود در HTML شما
       doctorElement.className = 'doctor-names col-6 col-md-3 mb-4';
 
       const fullName = `${doctor.user.fname} ${doctor.user.lname}`;
       const specialty = doctor.specialty ?? 'تخصص مشخص نیست';
-      const rating = '4.5'; // مقدار امتیاز ثابت
+      const rating = '4.5';
 
-      // ساختار HTML داخلی برای هر پزشک
       doctorElement.innerHTML = `
         <div class="doctor-name d-flex">
           <div class="d-flex">
@@ -356,8 +430,68 @@ document.addEventListener('DOMContentLoaded', async () => {
 
       container.appendChild(doctorElement);
     });
+  };
+  
+  // تابع اصلی برای دریافت اطلاعات از API و ذخیره آن‌ها
+  const fetchDoctors = async () => {
+    try {
+      const url = `http://localhost:8000/api/doctors?per_page=20&sort_by=&sort_type=`;
+      const response = await fetch(url, {
+        method: 'GET',
+        headers: {
+          'Authorization': 'Bearer ' + localStorage.getItem('token'),
+          'Accept': 'application/json'
+        }
+      });
 
-  } catch (error) {
-    console.error('خطا:', error);
-  }
+      if (!response.ok) throw new Error('خطا در دریافت اطلاعات پزشکان: ' + response.status);
+
+      const data = await response.json();
+      
+      // ذخیره همه پزشکان در متغیر سراسری
+      allDoctors = data.result.data;
+
+      // نمایش اولیه همه پزشکان
+      renderDoctors(allDoctors);
+
+    } catch (error) {
+      console.error('خطا:', error);
+      container.innerHTML = '<p class="text-center mt-5">در حال حاضر مشکلی در دریافت اطلاعات وجود دارد.</p>';
+    }
+  };
+
+  // تابع برای فیلتر کردن پزشکان و نمایش آن‌ها
+  const filterAndRenderDoctors = (searchTerm) => {
+    const searchTermLower = searchTerm.trim().toLowerCase();
+
+    // اگر عبارت جستجو خالی بود، همه پزشکان را نمایش بده
+    if (!searchTermLower) {
+      renderDoctors(allDoctors);
+      return;
+    }
+
+    // فیلتر کردن پزشکان بر اساس نام، نام خانوادگی یا تخصص
+    const filteredDoctors = allDoctors.filter(doctor => {
+      const fullName = `${doctor.user.fname} ${doctor.user.lname}`.toLowerCase();
+      const specialty = (doctor.specialty ?? '').toLowerCase();
+      
+      return fullName.includes(searchTermLower) || specialty.includes(searchTermLower);
+    });
+
+    renderDoctors(filteredDoctors);
+  };
+  
+  // اضافه کردن event listener به اینپوت جستجو
+  searchInput.addEventListener('input', (event) => {
+    clearTimeout(searchInput.debounceTimer);
+    searchInput.debounceTimer = setTimeout(() => {
+      const searchTerm = event.target.value;
+      filterAndRenderDoctors(searchTerm);
+    }, 300); // تاخیر 300 میلی‌ثانیه برای debounce
+  });
+
+  // فراخوانی اولیه تابع دریافت پزشکان هنگام بارگذاری صفحه
+  fetchDoctors();
 });
+
+
