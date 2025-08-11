@@ -31,7 +31,7 @@ async function loadUserPorfile(){
     }
 }
 
-
+// نمایش محصولات
 
 document.addEventListener("DOMContentLoaded",loadUserPorfile);
 
