@@ -31,11 +31,9 @@ async function loadUserPorfile(){
     }
 }
 
+
+
 document.addEventListener("DOMContentLoaded",loadUserPorfile);
-
-
-
-
 
 
 async function openbasket() {
