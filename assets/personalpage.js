@@ -1,3 +1,5 @@
+// ادرس های من
+const address = document.querySelector(".address")
 // سفارش هاس من
 const mybasket = document.querySelector(".basket");
 const panelLeft = document.querySelector(".panel-left")
@@ -95,11 +97,11 @@ async function opencomment() {
             html += 
             `
                 <div class="comment-card">
-                    <img src="${comment.product_image}" alt="${comment.product_name}">
+                    <img src="${Comment.product_image}" alt="${Comment.product_name}">
                     <div class="comment-info">
-                        <h3>${comment.product_name}</h3>
-                        <p class="comment-text">${comment.text}</p>
-                        <span class="comment-date">${comment.date}</span>
+                        <h3>${Comment.product_name}</h3>
+                        <p class="comment-text">${Comment.text}</p>
+                        <span class="comment-date">${Comment.date}</span>
                     </div>
                 </div>
             `;
@@ -111,5 +113,67 @@ async function opencomment() {
         panelLeft.innerHTML = "<p>خطا در دریافت پیام ها</p>";
     }
 }
+
+// ادرس های من
+
+async function openAddress() {
+    const panelLeft = document.querySelector(".panel-left");
+    panelLeft.innerHTML = ""; // خالی کردن محتوای قبلی
+
+    // ایجاد textarea و دکمه
+    const textarea = document.createElement("textarea");
+    textarea.placeholder = "آدرس خود را وارد کنید...";
+    textarea.classList.add("form-control", "mb-3");
+
+    const submitBtn = document.createElement("button");
+    submitBtn.textContent = "ثبت آدرس";
+    submitBtn.classList.add("btn", "btn-primary", "mb-3");
+
+    const addressList = document.createElement("div"); // لیست آدرس‌ها
+    addressList.classList.add("address-list");
+
+    panelLeft.appendChild(textarea);
+    panelLeft.appendChild(submitBtn);
+    panelLeft.appendChild(addressList);
+
+    // رویداد کلیک روی دکمه
+    submitBtn.addEventListener("click", async () => {
+        const addressValue = textarea.value.trim();
+        if (!addressValue) {
+            alert("لطفاً آدرس را وارد کنید");
+            return;
+        }
+
+        try {
+            const response = await fetch("http://localhost:8000/api/address", {
+                method: "POST",
+                headers: {
+                    "Authorization": "Bearer " + localStorage.getItem("token"),
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({ address: addressValue })
+            });
+
+            if (!response.ok) {
+                throw new Error("خطا در ارسال آدرس");
+            }
+
+            const result = await response.json();
+            console.log("آدرس ثبت شد:", result);
+
+            // افزودن آدرس جدید به لیست نمایش
+            const newAddress = document.createElement("p");
+            newAddress.textContent = addressValue;
+            addressList.appendChild(newAddress);
+
+            textarea.value = ""; // خالی کردن بعد از ثبت
+
+        } catch (error) {
+            console.error("خطا:", error);
+            alert("ثبت آدرس با خطا مواجه شد.");
+        }
+    });
+}
+
 
 
