@@ -2,7 +2,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const productNameInput = document.getElementById("productName");
     const productPriceInput = document.getElementById("productPrice");
     const productImageInput = document.getElementById("productImage");
-    const userIdInput = document.getElementById("userId"); // فیلد مخفی user_id
+    const userIdInput = document.getElementById("userId");
     const form = document.querySelector("form");
 
     form.addEventListener("submit", async (e) => {
@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const name = productNameInput.value.trim();
         const price = productPriceInput.value.trim();
         const imageFile = productImageInput.files[0];
-        const userId = userIdInput ? userIdInput.value : localStorage.getItem('user_id'); // استفاده از user_id از ورودی یا localStorage
+        const userId = userIdInput ? userIdInput.value : localStorage.getItem('user_id');
 
         if (!name || !price || !imageFile) {
             alert("لطفا نام، قیمت و عکس محصول را پر کنید");
@@ -22,14 +22,15 @@ document.addEventListener("DOMContentLoaded", () => {
         formData.append("name", name);
         formData.append("price", price);
         formData.append("image", imageFile);
-        formData.append("user_id", userId); // اضافه کردن user_id
+        formData.append("user_id", userId);
+
+        console.log("فایل ارسال‌شده:", imageFile); // دیباگ فایل
 
         try {
             const response = await fetch("http://localhost:8000/api/products", {
                 method: "POST",
                 headers: {
                     'Authorization': 'Bearer ' + localStorage.getItem('token')
-                    // Content-Type رو حذف می‌کنیم چون FormData خودش تنظیم می‌کنه
                 },
                 body: formData
             });
