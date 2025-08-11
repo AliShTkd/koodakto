@@ -435,7 +435,7 @@ document.addEventListener('DOMContentLoaded', async () => {
   // تابع اصلی برای دریافت اطلاعات از API و ذخیره آن‌ها
   const fetchDoctors = async () => {
     try {
-      const url = `http://localhost:8000/api/doctors?per_page=20&sort_by=&sort_type=`;
+      const url = `http://localhost:8000/api/doctors?per_page=12&sort_by=&sort_type=`;
       const response = await fetch(url, {
         method: 'GET',
         headers: {
