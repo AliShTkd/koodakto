@@ -1159,9 +1159,9 @@ font-size: 2.5rem;
   color: #100c0c;
 }
 .figma-10-sign-up-box-password-box p{
-  padding: 1rem 1rem 1rem 0;
   font-size: 1.4rem;
   color: #100c0c;
+  margin: 16px 0 0 0;
 }
 .figma-10-sign-up-box-password-box input{
   margin: 1rem 1rem 1rem 0;
@@ -1169,11 +1169,12 @@ font-size: 2.5rem;
   padding: 1rem;
   border-radius: 14px;
   border: 1px solid #ababab;
+  font-size: 1.4rem;
 }
 .figma-10-sign-up-box-username-box p{
-  padding: 1rem 1rem 1rem 0;
   font-size: 1.4rem;
   color: #100c0c;
+  margin: 15px 0 0 0;
 }
 .figma-10-sign-up-box-username-box input{
   margin: 1rem 1rem 1rem 0;
@@ -1181,11 +1182,12 @@ font-size: 2.5rem;
   padding: 1rem;
   border-radius: 14px;
   border: 1px solid #ababab;
+  font-size: 1.4rem;
 }
 .figma-10-sign-up-box-password-box p{
-  padding: 1rem 1rem 1rem 0;
   font-size: 1.4rem;
   color: #100c0c;
+  margin: 15px 0 0 0;
 }
 .figma-10-sign-up-box-password-box input{
   margin: 1rem 1rem 1rem 0;
@@ -1193,6 +1195,7 @@ font-size: 2.5rem;
   padding: 1rem;
   border-radius: 14px;
   border: 1px solid #ababab;
+  font-size: 1.4rem;
 }
 .figma-10-sign-up-box-btn-box{
   justify-content: center;
@@ -1217,9 +1220,9 @@ font-size: 2.5rem;
 }
 
  .figma-10-sign-up-box-name-box p{
-  padding: 1rem 1rem 1rem 0;
   font-size: 1.4rem;
   color: #100c0c;
+  margin: 15px 0 0 0;
 }
 .figma-10-sign-up-box-name-box input{
   margin: 1rem 1rem 1rem 0;
@@ -1227,11 +1230,12 @@ font-size: 2.5rem;
   padding: 1rem;
   border-radius: 14px;
   border: 1px solid #ababab;
+  font-size: 1.4rem;
 }
  .figma-10-sign-up-box-last-name-box p{
-  padding: 1rem 1rem 1rem 0;
   font-size: 1.4rem;
   color: #100c0c;
+  margin: 15px 0 0 0;
 }
 .figma-10-sign-up-box-last-name-box input{
   margin: 1rem 1rem 1rem 0;
@@ -1239,11 +1243,12 @@ font-size: 2.5rem;
   padding: 1rem;
   border-radius: 14px;
   border: 1px solid #ababab;
+  font-size: 1.4rem;
 }
  .figma-10-sign-up-box-address-box p{
-  padding: 1rem 1rem 1rem 0;
   font-size: 1.4rem;
   color: #100c0c;
+  margin: 15px 0 0 0;
 }
 .figma-10-sign-up-box-address-box input{
   margin: 1rem 1rem 1rem 0;
@@ -1251,11 +1256,12 @@ font-size: 2.5rem;
   padding: 1rem;
   border-radius: 14px;
   border: 1px solid #ababab;
+  font-size: 1.4rem;
 }
  .figma-10-sign-up-box-number-box p{
-  padding: 1rem 1rem 1rem 0;
   font-size: 1.4rem;
   color: #100c0c;
+  margin: 15px 0 0 0;
 }
 .figma-10-sign-up-box-number-box input{
   margin: 1rem 1rem 1rem 0;
@@ -1263,11 +1269,12 @@ font-size: 2.5rem;
   padding: 1rem;
   border-radius: 14px;
   border: 1px solid #ababab;
+  font-size: 1.4rem;
 }
  .figma-10-sign-up-box-email-box p{
-  padding: 1rem 1rem 1rem 0;
   font-size: 1.4rem;
   color: #100c0c;
+  margin: 15px 0 0 0;
 }
 .figma-10-sign-up-box-email-box input{
   margin: 1rem 1rem 1rem 0;
@@ -1275,6 +1282,7 @@ font-size: 2.5rem;
   padding: 1rem;
   border-radius: 14px;
   border: 1px solid #ababab;
+  font-size: 1.4rem;
 }
 /* end signin page */
 
@@ -1305,9 +1313,9 @@ font-size: 2.5rem;
   color: #070000;
 }
 .figma-9-log-in-box-username-box p{
-  padding: 1rem 1rem 1rem 0;
   font-size: 1.4rem;
   color: #100c0c;
+  margin: 15px 0 0 0;
 }
 .figma-9-log-in-box-username-box input{
   margin: 1rem 1rem 1rem 0;
@@ -1315,11 +1323,12 @@ font-size: 2.5rem;
   padding: 1rem;
   border-radius: 14px;
   border: 1px solid #100c0c;
+  font-size: 1.4rem;
 }
 .figma-9-log-in-box-password-box p{
-  padding: 1rem 1rem 1rem 0;
   font-size: 1.4rem;
   color: #100c0c;
+  margin: 15px 0 0 0;
 }
 .figma-9-log-in-box-password-box input{
   margin: 1rem 1rem 1rem 0;
@@ -1327,6 +1336,7 @@ font-size: 2.5rem;
   padding: 1rem;
   border-radius: 14px;
   border: 1px solid #100c0c;
+  font-size: 1.4rem;
 }
 .figma-9-log-in-box-btn-box{
   justify-content: center;
