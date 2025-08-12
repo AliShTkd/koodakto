@@ -18,6 +18,7 @@
 
 
 
+
 @media only screen and (max-width: 1200px){
     .jadid-div{
         height: 80rem;
@@ -37,6 +38,9 @@
         width: 60rem;
         height: 30vh;
     }
+    .main-color img{
+        display: none;
+     }
 }
 
 @media only screen and (max-width: 768px){
@@ -57,6 +61,9 @@
         width: 60rem;
         height: 30vh;
     }
+    .main-color img{
+        display: none;
+     }
 
 }
 

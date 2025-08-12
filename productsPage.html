@@ -14,82 +14,106 @@
 <body>
      <!-- start header -->
      <header class="container mt-4 nav-bar">
-        <div class="row align-items-center">
-      
-          <div class="col-lg-1 col-6 nav-box-icon">
-            <img class="nav-icon" src="./assets/photos/کودکتو.svg" alt="لوگو">
-          </div>
-      
-          <div class="col-lg-7 d-none d-lg-block align-items-center">
-            <ul class="nav-text d-flex">
-              <li class="nav-li d-flex align-items-center">
-                <img src="./assets/photos/home 04.svg" alt="">
-                <a href="index.html">خانه</a>
-              </li>
-              <li class="nav-li d-flex align-items-center">
-                <img src="./assets/photos/reward.svg" alt="">
-                <a href="contactUs.html">ارتباط با ما</a>
-              </li>
-              <li class="nav-li d-flex align-items-center">
-                <img src="./assets/photos/store.svg" alt="">
-                <a href="aboutUs.html">درباره ما</a>
-              </li>
-              <li class="nav-li d-flex align-items-center">
-                <img src="./assets/photos/receipt.svg" alt="">
-                <a href="mataleb.html">وبلاگ</a>
-              </li>
-              <li class="nav-li d-flex align-items-center">
+      <div class="row align-items-center">
+  
+      <div class="col-lg-1 col-6 nav-box-icon">
+        <img class="nav-icon" src="./assets/photos/کودکتو.svg" alt="لوگو">
+      </div>
+  
+      <div class="col-lg-9 d-none d-lg-block align-items-center">
+        <ul class="nav-text d-flex">
+          <li class="nav-li d-flex align-items-center">
+            <img src="./assets/photos/home 04.svg" alt="">
+            <a class="khaaneh" href="index.html">خانه</a>
+          </li>
+          <li class="nav-li d-flex align-items-center">
+            <img src="./assets/photos/reward.svg" alt="">
+            <a href="contactUs.html">ارتباط با ما</a>
+          </li>
+          <li class="nav-li d-flex align-items-center">
+            <img src="./assets/photos/store.svg" alt="">
+            <a href="aboutUs.html">درباره ما</a>
+          </li>
+          <li class="nav-li d-flex align-items-center">
+            <img src="./assets/photos/receipt.svg" alt="">
+            <a href="artice.html">وبلاگ</a>
+          </li>
+          <li class="nav-li d-flex align-items-center">
+            <img src="./assets/photos/shopping basket 02.svg" alt="">
+            <a href="productsPage.html">محصولات</a>
+          </li>
+          <li class="nav-li d-flex align-items-center">
                 <img src="./assets/photos/shopping basket 02.svg" alt="">
-                <a class="khaaneh" href="productsPage.html">محصولات</a>
-              </li>
-              <li class="nav-li d-flex align-items-center">
-                    <img src="./assets/photos/shopping basket 02.svg" alt="">
-                    <a href="basket.html">سبد خرید</a>
-              </li>
-            </ul>
-          </div>
-      
+                <a href="basket.html">سبد خرید</a>
+          </li>
+           <li class="nav-li d-flex align-items-center dropdown">
+                <img src="./assets/photos/shopping basket 02.svg" alt="">
+                <a class="dropbtn" href="usermanager.html">مدیریت ها</a>
+                <ul class="dropdown-content">
+                    <li class="dropdown-content-li"><a href="usermanager.html">مدیریت کاربران</a></li>
+                    <li class="dropdown-content-li"><a href="addProduct.html">مدیریت محصولات</a></li>
+                    <li class="dropdown-content-li"><a href="user-message.html">مدیریت پیام ها</a></li>
+                </ul>
+          </li>
+        </ul>
+      </div>
+  
 
-          <div class=" d-lg-block  d-none col-6 col-lg-4 text-start">
-            <input class="input-1" type="text" placeholder="محصول مورد نظر را جست و جو کنید">
-            <a href="login.html"><img class="combo-icon" src="./assets/photos/Combo shape.svg" alt=""></a>
-          </div>
-      
-          <div class="col-6 d-lg-none text-start">
-            <button class="btn" type="button" data-bs-toggle="collapse" data-bs-target="#mobileNav">
-             <div>☰</div>
-            </button>
-          </div>
-        </div>
-      
-        <div class="collapse d-lg-none nav-bar-1 " id="mobileNav">
-          <ul class="nav-text list-unstyled">
-            <li class="nav-li d-flex align-items-center">
-              <img src="./assets/photos/home 04.svg" alt="">
-              <a href="index.html">خانه</a>
-            </li>
-            <li class="nav-li d-flex align-items-center">
-              <img src="./assets/photos/reward.svg" alt="">
-              <a href="contactUs.html">ارتباط با ما</a>
-            </li>
-            <li class="nav-li d-flex align-items-center">
-              <img src="./assets/photos/store.svg" alt="">
-              <a href="aboutUs.html">درباره ما</a>
-            </li>
-            <li class="nav-li d-flex align-items-center">
-              <img src="./assets/photos/receipt.svg" alt="">
-              <a href="mataleb.html">وبلاگ</a>
-            </li>
-            <li class="nav-li d-flex align-items-center">
-              <img src="./assets/photos/shopping basket 02.svg" alt="">
-              <a href="productsPage.html">محصولات</a>
-            </li>
-            <li class="d-flex align-items-center justify-content-center">
-                <a href="login.html"><img class="combo-icon" src="./assets/photos/Combo shape.svg" alt=""></a>
-            </li>
-          </ul>
-        </div>
-      </header> 
+      <div class=" d-lg-block  d-none col-6 col-lg-2 text-start">
+        <a href="login.html"><button class="new-btn-sign-log">ثبت نام / ورود</button></a>
+        <!-- <input class="input-1" type="text" placeholder="محصول مورد نظر را جست و جو کنید"> -->
+        <a href="login.html"><img class="combo-icon" src="./assets/photos/Combo shape.svg" alt=""></a>
+      </div>
+  
+      <div class="col-6 d-lg-none text-start">
+        <button class="btn" type="button" data-bs-toggle="collapse" data-bs-target="#mobileNav">
+         <div class="bold">☰</div>
+        </button>
+      </div>
+    </div>
+  <!-- responsive menu for phone -->
+    <div class="collapse d-lg-none nav-bar-1 " id="mobileNav">
+      <ul class="nav-text list-unstyled">
+        <li class="nav-li d-flex align-items-center">
+          <img src="./assets/photos/home 04.svg" alt="">
+          <a href="index.html">خانه</a>
+        </li>
+        <li class="nav-li d-flex align-items-center">
+          <img src="./assets/photos/reward.svg" alt="">
+          <a href="contactUs.html">ارتباط با ما</a>
+        </li>
+        <li class="nav-li d-flex align-items-center">
+          <img src="./assets/photos/store.svg" alt="">
+          <a href="aboutUs.html">درباره ما</a>
+        </li>
+        <li class="nav-li d-flex align-items-center">
+          <img src="./assets/photos/receipt.svg" alt="">
+          <a href="artice.html">وبلاگ</a>
+        </li>
+        <li class="nav-li d-flex align-items-center">
+          <img src="./assets/photos/shopping basket 02.svg" alt="">
+          <a href="">محصولات</a>
+        </li>
+        <li class="nav-li d-flex align-items-center">
+            <img src="./assets/photos/receipt.svg" alt="">
+            <a href="addProduct.html">مدیریت محصولات</a>
+          </li>
+          <li class="nav-li d-flex align-items-center">
+            <img src="./assets/photos/receipt.svg" alt="">
+            <a href="usermanager.html">مدیریت کاربران</a>
+          </li>
+          <li class="nav-li d-flex align-items-center">
+            <img src="./assets/photos/receipt.svg" alt="">
+            <a href="user-message.html">مدیریت پیام ها</a>
+          </li>
+        
+        <li class="d-flex align-items-center justify-content-center">
+          <a href="login.html"><img class="combo-icon" src="./assets/photos/Combo shape.svg" alt=""></a>
+      </li>
+      </ul>
+    </div>
+    <!-- end responsive menu for phone -->
+</header> 
       <!-- end header -->
 
       <!-- container -->
