@@ -45,7 +45,7 @@
 
 @media only screen and (max-width: 768px){
     .jadid-div{
-        height: 84rem;
+        height: 91rem;
         
     }
     .webloge-img{
@@ -67,10 +67,11 @@
 
 }
 
-@media only screen and (max-width: 500px){
+@media only screen and (max-width: 576px){
     .jadid-div{
        
         margin-top: 4rem !important;
+        height: 91rem;
     }
     .mataleb-div{
         height: 54rem;
@@ -80,7 +81,7 @@
         height: 48rem !important;
     }
     .jadid-div-2{
-        height: 39rem !important;
+        height: 41rem !important;
        }
     #cmInput {
         width: 46rem;
@@ -98,4 +99,79 @@
         display: none;
      }
 }
+
+
+/* (ilia webloge page) */
+
+@media only screen and (max-width: 1200px){
+    .all-jadid-div-2{
+        height: 99rem !important;
+    }
+}
+
+@media only screen and (max-width: 992px){
+   
+    .all-jadid-div-2{
+        width: 38rem !important;
+    }
+}
+
+@media only screen and (max-width: 768px){
+    .all-jadid-div-2{
+        margin-right: 17rem;
+    }
+
+}
+
+@media only screen and (max-width: 576px){
+    .all-jadid-div-2{
+
+    }
+    
+
+}
+
+
+
+
+
+
+
+
+@media only screen and (max-width: 1200px){
+   
+}
+
+@media only screen and (max-width: 992px){
+   
+    .section-questions-box{
+
+        margin-right: 22rem;
+    }
+}
+
+@media only screen and (max-width: 768px){
+   
+    .section-questions-box{
+
+        margin-right: 15rem;
+
+}
+}
+
+@media only screen and (max-width: 576px){
+   
+    
+    .section-questions-box{
+        margin-right: 0rem;
+
+        
+
+}
+}
+
+
+
+
+
 
