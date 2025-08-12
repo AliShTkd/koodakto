@@ -5,7 +5,7 @@ async function loadUserList(page = 1) {
     const response = await fetch(`http://localhost:8000/api/users?per_page=10&page=${page}`, {
       method: 'GET',
       headers: {
-        'Authorization': 'Bearer ' + localStorage.getItem('token')
+        'Authorization': 'Bearer ' + localStorage.getItem('token'),
       }
     });
 
