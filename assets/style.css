@@ -28,8 +28,14 @@ header{
 }
 .nav-li{
     margin-left:22px;
-    font-size: 1.4rem;
-    
+    font-size: 1.4rem;   
+}
+.nav-li a{
+  transition: all 0.3s !important;
+}
+.nav-li a:hover{
+  color:#AC3DEB !important ;
+  transform: scale(1.08);
 }
 .nav-li img {
     margin-left: 5px;
@@ -50,7 +56,7 @@ header{
 }
 .input-1{
     width: 296px;
-    height: 48px;
+    height: 30px;
     border-radius: 43px;
     border: none;
     font-size: 1.2rem;
@@ -81,6 +87,7 @@ background-color:white;
 border-radius: 10px;
 color: white !important;
 display: none;
+border: 2px solid #e21ae2;
 }
 .dropdown-content-li a{
   color: rgb(66, 66, 66) !important;
@@ -98,11 +105,14 @@ display: none;
   border-radius: 10px;
   padding: 5px;
   border: none;
-  background-color: #8226B6;
+  background-color:#aa4cdf;
   color: white;
+  transition: all 0.3s ease;
 }
 .new-btn-sign-log:hover{
-background-color: #c058fc;
+  padding: 7px;
+background-color: #a020f0;
+transform: scale(1);
 }
 /* end header */
 
@@ -135,6 +145,10 @@ background-color: #c058fc;
     width: 78px;
     height: 78px;
     border-radius: 25px;
+    transition: all 0.3s ease;
+}
+.box-main:hover{
+  transform: scale(1.08);
 }
 .box-text{
     font-size: 1.4rem;
@@ -247,7 +261,6 @@ background-color: #c058fc;
     border: none;
     outline: none;
     background: transparent;
-    width: 100%;
     font-size: 1.4rem;
     color: #555;
     
@@ -569,6 +582,11 @@ background-color: #c058fc;
       height: 44px;
       border-radius: 30px;
       background: var(--main-color);
+      transition: all 0.3s ease;
+    }
+    .product-btn:hover{
+      transform: scale(1.03);
+
     }
     .product-container{
       overflow: hidden;
@@ -614,6 +632,10 @@ background-color: #c058fc;
   .price-toman{
     font-size: 1.4rem;
     color: #8E8E8E;
+  }
+
+  #nexts , #prevs , #next , #prev{
+    cursor: pointer;
   }
   /* end section best-seller */
 
@@ -1115,27 +1137,31 @@ font-size: 2.5rem;
 .figma-10-sign-up-box{
   display: flex;
   justify-content: center;
-  background-color:#FDE7FF;
   width: 350px !important;
   border-radius: 25px;
   margin-top:10rem;
+  background: rgba(255, 255, 255, 0.7);
+  padding: 2rem;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+  backdrop-filter: blur(5px);
+  text-align: center;
 }
 .figma-10-sign-up-box-2{
   width: 85%;
 }
 .figma-10-sign-up-box-title{
   justify-content: center;
-  border-bottom: 1px solid #C2C2C2;
+  border-bottom: 1px solid #100c0c;
   gap: 2rem;
 }
 .figma-10-sign-up-box-title p{
   font-size: 2.4rem;
-  color: #C2C2C2;
+  color: #100c0c;
 }
 .figma-10-sign-up-box-password-box p{
   padding: 1rem 1rem 1rem 0;
   font-size: 1.4rem;
-  color: #C2C2C2;
+  color: #100c0c;
 }
 .figma-10-sign-up-box-password-box input{
   margin: 1rem 1rem 1rem 0;
@@ -1147,7 +1173,7 @@ font-size: 2.5rem;
 .figma-10-sign-up-box-username-box p{
   padding: 1rem 1rem 1rem 0;
   font-size: 1.4rem;
-  color: #C2C2C2;
+  color: #100c0c;
 }
 .figma-10-sign-up-box-username-box input{
   margin: 1rem 1rem 1rem 0;
@@ -1159,7 +1185,7 @@ font-size: 2.5rem;
 .figma-10-sign-up-box-password-box p{
   padding: 1rem 1rem 1rem 0;
   font-size: 1.4rem;
-  color: #C2C2C2;
+  color: #100c0c;
 }
 .figma-10-sign-up-box-password-box input{
   margin: 1rem 1rem 1rem 0;
@@ -1178,7 +1204,7 @@ font-size: 2.5rem;
   border-radius: 14px;
   font-size: 1.4rem;
   background-color: #ffffff;
-  color: #C2C2C2;
+  color: #100c0c;
   border: none;
 }
  .figma-10-sign-up-box-btn-2{
@@ -1193,7 +1219,7 @@ font-size: 2.5rem;
  .figma-10-sign-up-box-name-box p{
   padding: 1rem 1rem 1rem 0;
   font-size: 1.4rem;
-  color: #C2C2C2;
+  color: #100c0c;
 }
 .figma-10-sign-up-box-name-box input{
   margin: 1rem 1rem 1rem 0;
@@ -1205,7 +1231,7 @@ font-size: 2.5rem;
  .figma-10-sign-up-box-last-name-box p{
   padding: 1rem 1rem 1rem 0;
   font-size: 1.4rem;
-  color: #C2C2C2;
+  color: #100c0c;
 }
 .figma-10-sign-up-box-last-name-box input{
   margin: 1rem 1rem 1rem 0;
@@ -1217,7 +1243,7 @@ font-size: 2.5rem;
  .figma-10-sign-up-box-address-box p{
   padding: 1rem 1rem 1rem 0;
   font-size: 1.4rem;
-  color: #C2C2C2;
+  color: #100c0c;
 }
 .figma-10-sign-up-box-address-box input{
   margin: 1rem 1rem 1rem 0;
@@ -1229,7 +1255,7 @@ font-size: 2.5rem;
  .figma-10-sign-up-box-number-box p{
   padding: 1rem 1rem 1rem 0;
   font-size: 1.4rem;
-  color: #C2C2C2;
+  color: #100c0c;
 }
 .figma-10-sign-up-box-number-box input{
   margin: 1rem 1rem 1rem 0;
@@ -1241,7 +1267,7 @@ font-size: 2.5rem;
  .figma-10-sign-up-box-email-box p{
   padding: 1rem 1rem 1rem 0;
   font-size: 1.4rem;
-  color: #C2C2C2;
+  color: #100c0c;
 }
 .figma-10-sign-up-box-email-box input{
   margin: 1rem 1rem 1rem 0;
@@ -1256,17 +1282,22 @@ font-size: 2.5rem;
 .figma-9-log-in-box{
   display: flex;
   justify-content: center;
-  background-color:#FDE7FF;
   width: 350px !important;
   border-radius: 25px;
   margin-top:10rem;
+  background: rgba(255, 255, 255, 0.7);
+  padding: 2rem;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+  backdrop-filter: blur(5px);
+  text-align: center;
+
 }
 .figma-9-log-in-box-2{
   width: 85%;
 }
 .figma-9-log-in-box-title{
   justify-content: center;
-  border-bottom: 1px solid #C2C2C2;
+  border-bottom: 1px solid #100c0c;
   gap: 2rem;
 }
 .figma-9-log-in-box-title p{
@@ -1322,6 +1353,20 @@ font-size: 2.5rem;
 color: red;
 
 }
+.all-all{
+  background: linear-gradient(135deg, rgba(255, 192, 203, 0.8), rgba(186, 85, 211, 0.8)),
+  url('your-background-image.jpg') center/cover no-repeat;
+
+  /* افکت بلور */
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
 
 /* end login page */
 
@@ -1349,7 +1394,12 @@ color: red;
     font-size: 1.4rem;
     color: #808080;
     margin-bottom: 10px;
+    transition: all 0.3s !important;
   }
+.li-footer:hover{
+  color:#AC3DEB !important ;
+  transform: scale(1.08);
+}
   .li-footer::marker{
     color: #8226B6; 
   }
@@ -1368,7 +1418,12 @@ color: red;
     border-bottom-right-radius: 10px;
     padding: 3px 3px 8px 3px;
     box-shadow: 0 4px 20px rgba(51, 50, 0, 0.1);
+    transition: all 0.3s !important;
   }
+  .footer-contact-us-button:hover{
+    transform: scale(1.05);
+  }
+
   .footer-contact-us-button button{
    width: 33px;
    height: 33px;
@@ -1425,9 +1480,10 @@ color: red;
     .edit-user{
       background-color:#FDE7FF !important;
     }
-   .btn{
-    background-color: #ec46f8 !important;
-   }
+    .bold{
+      font-size: 1.5rem;
+    }
+  
   
   
 .a-age-section {

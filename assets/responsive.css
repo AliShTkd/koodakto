@@ -13,10 +13,7 @@
     }
 }
 
-<<<<<<< HEAD
 
-=======
->>>>>>> 7fb4552c0784c520fc8a6b37ccbe0fbca6f0456a
 
 
 
@@ -41,6 +38,9 @@
         width: 60rem;
         height: 30vh;
     }
+    .main-color img{
+        display: none;
+     }
 }
 
 @media only screen and (max-width: 768px){
@@ -61,6 +61,9 @@
         width: 60rem;
         height: 30vh;
     }
+    .main-color img{
+        display: none;
+     }
 
 }
 
