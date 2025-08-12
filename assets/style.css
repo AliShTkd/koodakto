@@ -1538,6 +1538,51 @@ color: red;
   height: 43rem;
 }
 
+.jadid-div{
+  border: 1px solid #DBDBDB;
+  border-radius: 40px;
+  height: 73rem;
+}
+.jadid-div-1{
+   padding: 15px;
+}
+.jadiv-txt-icon p{
+  font-size: 2rem;
+  color: #5B554F;
+  font-weight: 500;
+}
+.maghale-img{
+  width: 50%;
+  
+}
+.maghale-img img{
+  width: 100%;
+  border-radius: 15px;
+}
+.maghale-text{
+  margin-right: 10px;
+}
+.maghale-p{
+  font-size: 1.4rem;
+  color: #6C6C6C;
+}
+.maghale-p1{
+  font-size: 1.2rem;
+  color: #858585;
+}
+.line{
+  margin-top: 20px;
+  border: 1px solid #D4D4D4;
+  width: 100%;
+}
+.maghale-gap{
+  gap: 2rem;
+}
+
+
+
+/* end  */
+
 .slide-img-3{
   border-radius: 2rem;
   height: 22rem;
@@ -1576,5 +1621,60 @@ color: red;
   margin-top: 10px;
 }
 /*user message page end */
+
+
+
+
+.all-jadid-div-2{
+  border: 1px solid #DBDBDB;
+  border-radius: 40px;
+  height: 90rem;
+}
+.mataleb-div-2{
+  border: 1px solid #DBDBDB;
+  border-radius: 40px;
+  height: 43rem;
+}
+
+.jadid-div{
+  border: 1px solid #DBDBDB;
+  border-radius: 40px;
+  height: 73rem;
+}
+.jadid-div-1{
+   padding: 15px;
+}
+.jadiv-txt-icon p{
+  font-size: 2rem;
+  color: #5B554F;
+  font-weight: 500;
+}
+.maghale-img{
+  width: 50%;
+  
+}
+.maghale-img img{
+  width: 100%;
+  border-radius: 15px;
+}
+.maghale-text{
+  margin-right: 10px;
+}
+.maghale-p{
+  font-size: 1.4rem;
+  color: #6C6C6C;
+}
+.maghale-p1{
+  font-size: 1.2rem;
+  color: #858585;
+}
+.line{
+  margin-top: 20px;
+  border: 1px solid #D4D4D4;
+  width: 100%;
+}
+.maghale-gap{
+  gap: 2rem;
+}
 
 
