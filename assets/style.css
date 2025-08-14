@@ -1179,9 +1179,9 @@ font-size: 2.5rem;
   color: #100c0c;
 }
 .figma-10-sign-up-box-password-box p{
-  padding: 1rem 1rem 1rem 0;
   font-size: 1.4rem;
   color: #100c0c;
+  margin: 16px 0 0 0;
 }
 .figma-10-sign-up-box-password-box input{
   margin: 1rem 1rem 1rem 0;
@@ -1189,11 +1189,12 @@ font-size: 2.5rem;
   padding: 1rem;
   border-radius: 14px;
   border: 1px solid #ababab;
+  font-size: 1.2rem;
 }
 .figma-10-sign-up-box-username-box p{
-  padding: 1rem 1rem 1rem 0;
   font-size: 1.4rem;
   color: #100c0c;
+  margin: 15px 0 0 0;
 }
 .figma-10-sign-up-box-username-box input{
   margin: 1rem 1rem 1rem 0;
@@ -1201,11 +1202,12 @@ font-size: 2.5rem;
   padding: 1rem;
   border-radius: 14px;
   border: 1px solid #ababab;
+  font-size: 1.2rem;
 }
 .figma-10-sign-up-box-password-box p{
-  padding: 1rem 1rem 1rem 0;
   font-size: 1.4rem;
   color: #100c0c;
+  margin: 15px 0 0 0;
 }
 .figma-10-sign-up-box-password-box input{
   margin: 1rem 1rem 1rem 0;
@@ -1213,6 +1215,7 @@ font-size: 2.5rem;
   padding: 1rem;
   border-radius: 14px;
   border: 1px solid #ababab;
+  font-size: 1.2rem;
 }
 .figma-10-sign-up-box-btn-box{
   justify-content: center;
@@ -1237,9 +1240,9 @@ font-size: 2.5rem;
 }
 
  .figma-10-sign-up-box-name-box p{
-  padding: 1rem 1rem 1rem 0;
   font-size: 1.4rem;
   color: #100c0c;
+  margin: 15px 0 0 0;
 }
 .figma-10-sign-up-box-name-box input{
   margin: 1rem 1rem 1rem 0;
@@ -1247,11 +1250,12 @@ font-size: 2.5rem;
   padding: 1rem;
   border-radius: 14px;
   border: 1px solid #ababab;
+  font-size: 1.2rem;
 }
  .figma-10-sign-up-box-last-name-box p{
-  padding: 1rem 1rem 1rem 0;
   font-size: 1.4rem;
   color: #100c0c;
+  margin: 15px 0 0 0;
 }
 .figma-10-sign-up-box-last-name-box input{
   margin: 1rem 1rem 1rem 0;
@@ -1259,11 +1263,12 @@ font-size: 2.5rem;
   padding: 1rem;
   border-radius: 14px;
   border: 1px solid #ababab;
+  font-size: 1.2rem;
 }
  .figma-10-sign-up-box-address-box p{
-  padding: 1rem 1rem 1rem 0;
   font-size: 1.4rem;
   color: #100c0c;
+  margin: 15px 0 0 0;
 }
 .figma-10-sign-up-box-address-box input{
   margin: 1rem 1rem 1rem 0;
@@ -1271,11 +1276,12 @@ font-size: 2.5rem;
   padding: 1rem;
   border-radius: 14px;
   border: 1px solid #ababab;
+  font-size: 1.2rem;
 }
  .figma-10-sign-up-box-number-box p{
-  padding: 1rem 1rem 1rem 0;
   font-size: 1.4rem;
   color: #100c0c;
+  margin: 15px 0 0 0;
 }
 .figma-10-sign-up-box-number-box input{
   margin: 1rem 1rem 1rem 0;
@@ -1283,11 +1289,12 @@ font-size: 2.5rem;
   padding: 1rem;
   border-radius: 14px;
   border: 1px solid #ababab;
+  font-size: 1.2rem;
 }
  .figma-10-sign-up-box-email-box p{
-  padding: 1rem 1rem 1rem 0;
   font-size: 1.4rem;
   color: #100c0c;
+  margin: 15px 0 0 0;
 }
 .figma-10-sign-up-box-email-box input{
   margin: 1rem 1rem 1rem 0;
@@ -1295,6 +1302,7 @@ font-size: 2.5rem;
   padding: 1rem;
   border-radius: 14px;
   border: 1px solid #ababab;
+  font-size: 1.2rem;
 }
 /* end signin page */
 
@@ -1325,9 +1333,9 @@ font-size: 2.5rem;
   color: #070000;
 }
 .figma-9-log-in-box-username-box p{
-  padding: 1rem 1rem 1rem 0;
   font-size: 1.4rem;
   color: #100c0c;
+  margin: 15px 0 0 0;
 }
 .figma-9-log-in-box-username-box input{
   margin: 1rem 1rem 1rem 0;
@@ -1335,11 +1343,12 @@ font-size: 2.5rem;
   padding: 1rem;
   border-radius: 14px;
   border: 1px solid #100c0c;
+  font-size: 1.2rem;
 }
 .figma-9-log-in-box-password-box p{
-  padding: 1rem 1rem 1rem 0;
   font-size: 1.4rem;
   color: #100c0c;
+  margin: 15px 0 0 0;
 }
 .figma-9-log-in-box-password-box input{
   margin: 1rem 1rem 1rem 0;
@@ -1347,6 +1356,7 @@ font-size: 2.5rem;
   padding: 1rem;
   border-radius: 14px;
   border: 1px solid #100c0c;
+  font-size: 1.2rem;
 }
 .figma-9-log-in-box-btn-box{
   justify-content: center;
@@ -1366,7 +1376,7 @@ font-size: 2.5rem;
   border-radius: 14px;
   font-size: 1.4rem;
   background-color: #ffffff;
-  color: #C2C2C2;
+  color: #100c0c;
   border: none;
 }
 .error{
@@ -1375,7 +1385,7 @@ color: red;
 }
 .all-all{
   background: linear-gradient(135deg, rgba(255, 192, 203, 0.8), rgba(186, 85, 211, 0.8)),
-  url('your-background-image.jpg') center/cover no-repeat;
+  url('./photos/kids-draw-make-crafts-kindergarten-preschool-background-kids-draw-make-crafts-children-educational-toys-school-158109037.webp') center/cover no-repeat;
 
   /* افکت بلور */
   backdrop-filter: blur(8px);
