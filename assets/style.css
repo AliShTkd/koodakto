@@ -114,6 +114,11 @@ border: 2px solid #e21ae2;
 background-color: #a020f0;
 transform: scale(1);
 }
+/* checked login */
+.panel-link, .login-link {
+  display: none;
+}
+
 /* end header */
 
 /* start main */
@@ -255,6 +260,10 @@ transform: scale(1);
     color: #888;
     gap: 8px;
     box-shadow: 0px 2px  3px rgb(0, 0, 0,0.16);
+    transition: 0.3s;
+  }
+  .search-input:hover{
+    transform: scale(1.05);
   }
   
   .search-input input {
@@ -277,7 +286,17 @@ transform: scale(1);
     font-size: 1.8rem;
     margin-right: 5px;
   }
-  
+  .search-item{
+    background-color: #c04ce4;
+    transition: 0.3s;
+  }
+  .search-item:hover{
+    background-color: #e180ff;
+    transform: scale(1.05);
+  }
+  .btn-89{
+    color: white;
+  }
   .search-icon {
     font-size: 1.6rem;
     color: #aaa;
@@ -421,8 +440,14 @@ transform: scale(1);
     justify-content: center;
     align-items: center;
   }
+  .icons:hover{
+    background-color: #dda2ff;
+  }
   .icon-1{
     width: 10px;
+  }
+  .icon-1:hover{
+    color: white;
   }
   .hobby-slide{
     overflow: hidden;
@@ -893,6 +918,7 @@ font-size: 2.5rem;
   width: 60rem;
   border-radius: 10px;
   height: 15vh;
+  font-size: 1.4rem;
 }
 .comment-doctor-footer-btn{
   display: flex;
@@ -936,7 +962,7 @@ border-radius: 35px;
 }
 .input-box{
 border-radius: 24px;
-font-size: 1.2rem;
+font-size: 1.4rem;
 color:rgb(66, 66, 66);
 border: none;
 width: 427px;
@@ -946,7 +972,7 @@ padding: 1rem;
 }
 .input-box-1{
 border-radius: 24px;
-font-size: 1.2rem;
+font-size: 1.4rem;
 color:rgb(66, 66, 66);
 border: none;
 width: 895px;
@@ -1874,3 +1900,9 @@ height: 7rem;
   }
 
   
+/* user manager */
+
+
+.form-control{
+  font-size: 1.4rem !important;
+}
