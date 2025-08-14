@@ -114,6 +114,11 @@ border: 2px solid #e21ae2;
 background-color: #a020f0;
 transform: scale(1);
 }
+/* checked login */
+.panel-link, .login-link {
+  display: none;
+}
+
 /* end header */
 
 /* start main */
