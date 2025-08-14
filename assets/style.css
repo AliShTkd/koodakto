@@ -913,6 +913,7 @@ font-size: 2.5rem;
   width: 60rem;
   border-radius: 10px;
   height: 15vh;
+  font-size: 1.4rem;
 }
 .comment-doctor-footer-btn{
   display: flex;
@@ -1894,3 +1895,9 @@ height: 7rem;
   }
 
   
+/* user manager */
+
+
+.form-control{
+  font-size: 1.4rem !important;
+}
