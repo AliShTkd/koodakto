@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', async () => {
   try {
-    const response = await fetch('http://localhost:8000/api/doctors?per_page=20&sort_by=&sort_type=', {
+    const response = await fetch('http://localhost:8000/api/doctors?per_page=24&sort_by=&sort_type=', {
       method: 'GET',
       headers: {
         'Authorization': 'Bearer ' + localStorage.getItem('token'),
