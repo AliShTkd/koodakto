@@ -1906,3 +1906,22 @@ height: 7rem;
 .form-control{
   font-size: 1.4rem !important;
 }
+/* ILIA */
+/* FAQ */
+.faq-question{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  width:100%;
+  gap:8px;
+}
+.faq-text{ flex:1; }
+
+/* فلش */
+.faq-icon{
+  transition: transform 0.25s ease;
+  font-size:18px;
+  line-height:1;
+  user-select:none;
+}
+.faq-icon.open{ transform: rotate(90deg); }
