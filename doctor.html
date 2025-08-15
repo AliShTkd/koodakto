@@ -115,7 +115,9 @@
         </header> 
             <!-- end header -->
            
-       <div class="container">
+
+            <!-- کد قبلی -->
+       <!-- <div class="container">
         <div class="doctor-page mt-5 row">
             <div class="doctor-page-right col-lg-6">
                 <div class="doctor-page-right-top justify-content-between align-items-center d-flex">
@@ -201,7 +203,85 @@
 
             </div>
         </div>
-      </div>
+      </div> -->
+
+<!-- کد جدید -->
+     <div class="container">
+        <div class="doctor-page mt-5 row">
+            <!-- DOCTOR DETAILS SECTION (RIGHT) -->
+            <div class="doctor-page-right col-lg-6">
+                <div class="doctor-page-right-top justify-content-between align-items-center d-flex">
+                    <div class="doctor-detail-right d-flex align-items-center">
+                        <div class="doctor-img"><img src="./assets/photos/Frame 1116606979 (1).svg" alt="عکس پزشک"></div>
+                        <div class="doctor-p-box">
+                            <div><p class="doctor-name-1">در حال بارگذاری...</p></div>
+                            <div><p class="doctor-specialist"></p></div>
+                        </div>
+                    </div>
+                    <div class="doctor-point">
+                        <span><img src="./assets/photos/Star 5.svg" alt="ستاره"></span>
+                    </div>
+                </div>
+                <div class="doctor-page-right-main d-flex align-items-center mt-4">
+                    <div class="loc-img"><img src="./assets/photos/location 03.svg" alt="مکان"></div>
+                    <div><p class="loc-p">آدرس: ...</p></div>
+                </div>
+                <div class="doctor-page-right-main-1 d-flex justify-content-around mt-5">
+                    <div class="d-flex align-items-center">
+                        <img src="./assets/photos/check-circle.svg" alt="تیک">
+                        <p class="successful-turn">... نوبت موفق</p>
+                    </div>
+                    <div class="d-flex align-items-center">
+                        <img src="./assets/photos/like.svg" alt="لایک">
+                        <p class="successful-turn">... پیشنهاد کاربران</p>
+                    </div>
+                    <div class="d-flex align-items-center">
+                        <img src="./assets/photos/smile-ellipse.svg" alt="لبخند">
+                        <p class="successful-turn">کم ترین معطلی</p>
+                    </div>
+                </div>
+                
+                <!-- Booking section wrapper -->
+                <div id="booking-section" class="doctor-page-right-bottom d-flex align-items-center justify-content-between mt-5">
+                    <div><p class="doctor-page-right-bottom-p">همین الان نوبت بگیر!</p></div>
+                    <div class="turn-color"><p class="turn-p "><a class="turn-a" href="#" id="book-appointment-btn">رزرو نوبت</a></p></div>
+                </div>
+                <!-- This div will show success or error messages for booking -->
+                <div id="appointment-message-box" class="mt-3"></div>
+
+                <!-- Comment Submission Form -->
+                <div class="comment-doctor-container mt-5">
+                    <div class="comment-doctor-title">
+                        <h4>نظر خود را وارد کنید</h4>
+                    </div>
+                    <div class="comment-doctor-footer mb-4">
+                        <div class="comment-doctor-text-area col-lg-12">
+                            <textarea id="cmInput" placeholder="نظر خود را وارد کنید"></textarea>
+                        </div>
+                        <div class="comment-doctor-footer-btn">
+                            <button class="cm-btn-dr" id="cmBtn">افزودن نظر</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- COMMENTS DISPLAY SECTION (LEFT) -->
+            <div class="doctor-page-left col-lg-6">
+                <div class="doctor-page-comment d-flex align-items-center justify-content-between mt-5">
+                    <div><p class="comment-p">نظرات کاربران</p></div>
+                    <div class="d-flex align-items-center">
+                        <img src="./assets/photos/like.svg" alt="">
+                        <p class="successful-turn">90% پیشنهاد کاربران</p>
+                    </div>
+                </div>
+                <!-- This container will be filled with comments from the API -->
+                <div id="comments-container">
+                    <!-- Static comment from original HTML is removed by JS -->
+                </div>
+            </div>
+        </div>
+    </div>
+
 
              <!-- start footer -->
              <footer>
